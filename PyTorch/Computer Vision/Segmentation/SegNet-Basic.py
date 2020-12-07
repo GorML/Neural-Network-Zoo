@@ -1,3 +1,7 @@
+"""
+Model: https://arxiv.org/pdf/1511.00561.pdf
+Weight Initialization: https://arxiv.org/pdf/1502.01852.pdf
+"""
 from torch.nn import Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, zeros_, ones_
 
@@ -7,42 +11,28 @@ class SegNet_Basic(nn.Module):
         super().__init__()
 
         # Encoder
-        self.enc_conv0 = Sequential(Conv2d(in_channels, 64, kernel_size=3, padding=1),
-                                       BatchNorm2d(64),
-                                       ReLU())
-        self.pool0 = nn.MaxPool2d(kernel_size=2, stride=2, return_indices=True)
-        self.enc_conv1 = nn.Sequential(nn.Conv2d(64, 128, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(128),
-                                       nn.ReLU())
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2, return_indices=True)
-        self.enc_conv2 = nn.Sequential(nn.Conv2d(128, 256, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(256),
-                                       nn.ReLU())
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2, return_indices=True)
-        self.enc_conv3 = nn.Sequential(nn.Conv2d(256, 512, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(512),
-                                       nn.ReLU())
-        self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.enc_conv1 = Sequential(Conv2d(in_channels, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.pool1 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.enc_conv2 = Sequential(Conv2d(64, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.pool2 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.enc_conv3 = Sequential(Conv2d(128, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.pool3 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.enc_conv4 = Sequential(nn.Conv2d(256, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.pool4 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
 
         # Bottleneck
-        self.bottleneck = nn.Conv2d(512, 512, kernel_size=3, padding=1)
+        self.bottleneck = Conv2d(512, 512, kernel_size=3, padding=1)
 
         # Decoder
-        self.unpool0 = nn.MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv0 = nn.Sequential(nn.ConvTranspose2d(512, 256, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(256),
-                                       nn.ReLU())
-        self.unpool1 = nn.MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv1 = nn.Sequential(nn.ConvTranspose2d(256, 128, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(128),
-                                       nn.ReLU())
-        self.unpool2 = nn.MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv2 = nn.Sequential(nn.ConvTranspose2d(128, 64, kernel_size=3, padding=1),
-                                       nn.BatchNorm2d(64),
-                                       nn.ReLU())
-        self.unpool3 = nn.MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv3 = nn.Sequential(nn.ConvTranspose2d(64, num_classes, kernel_size=3, padding=1),
-                                       nn.Softmax())
+        self.unpool1 = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv1 = Sequential(ConvTranspose2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.unpool2 = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv2 = Sequential(ConvTranspose2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.unpool3 = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv3 = Sequential(ConvTranspose2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.unpool4 = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv4 = Sequential(ConvTranspose2d(64, num_classes, kernel_size=3, padding=1), Softmax())
+        
         # Weight Initialization
         self._initialize_weights(self.enc_conv0, self.enc_conv1, self.enc_conv2, self.enc_conv3,
                                  self.dec_conv0, self.dec_conv1, self.dec_conv2, self.dec_conv3)
@@ -60,17 +50,17 @@ class SegNet_Basic(nn.Module):
 
     def forward(self, x):
         # Encoder
-        e0, e0_idx = self.pool0(self.enc_conv0(x))
-        e1, e1_idx = self.pool1(self.enc_conv1(e0))
+        e1, e1_idx = self.pool1(self.enc_conv1(x))
         e2, e2_idx = self.pool2(self.enc_conv2(e1))
         e3, e3_idx = self.pool3(self.enc_conv3(e2))
+        e4, e4_idx = self.pool4(self.enc_conv4(e3))
 
         # Bottleneck
-        b = self.bottleneck(e3)
+        b = self.bottleneck(e4)
 
         # Decoder
-        d0 = self.dec_conv0(self.unpool0(b,  e3_idx))
-        d1 = self.dec_conv1(self.unpool1(d0, e2_idx))
-        d2 = self.dec_conv2(self.unpool2(d1, e1_idx))
-        d3 = self.dec_conv3(self.unpool3(d2, e0_idx))
-        return d3
+        d1 = self.dec_conv1(self.unpool1(b,  e4_idx))
+        d2 = self.dec_conv2(self.unpool2(d1, e3_idx))
+        d3 = self.dec_conv3(self.unpool3(d2, e2_idx))
+        d4 = self.dec_conv4(self.unpool4(d3, e1_idx))
+        return d4
