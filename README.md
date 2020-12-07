@@ -1,2 +1,3 @@
-# Neural-Network-Zoo
-🕸️ Neural Network Architectures implemented in PyTorch and Swift for Tensorflow.
+# Neural Network Zoo
+
+## 🕸️ Neural Network Architectures implemented in PyTorch and Swift for Tensorflow.
