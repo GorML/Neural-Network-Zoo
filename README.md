@@ -6,7 +6,7 @@
 
 :eagle: Swift for Tensorflow
 
-### :dart: Short-term goal is to assemble a model zoo of neural networks in the fields of:
+### :dart: Goal is to assemble a model zoo of neural networks in the fields of:
 
 :eyes: Computer Vision
 
