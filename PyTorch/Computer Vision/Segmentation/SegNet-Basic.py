@@ -1,6 +1,6 @@
 """
-Model: https://arxiv.org/pdf/1511.00561.pdf
-Weight Initialization: https://arxiv.org/pdf/1502.01852.pdf
+SegNet-Basic Architecture: https://arxiv.org/pdf/1511.00561.pdf
+Kaiming Weight Initialization: https://arxiv.org/pdf/1502.01852.pdf
 """
 from torch.nn import Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, zeros_, ones_
