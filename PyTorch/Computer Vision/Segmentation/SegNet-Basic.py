@@ -2,12 +2,12 @@
 SegNet Architecture (2016): https://arxiv.org/pdf/1511.00561.pdf
 Kaiming Weight Initialization (2015): https://arxiv.org/pdf/1502.01852.pdf
 """
-from torch.nn import Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
+from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, zeros_, ones_
 
 
-class SegNet_Basic(nn.Module):
-    def __init__(self, in_channels=3, num_classes=2):
+class SegNet_Basic(Module):
+    def __init__(self, in_channels=3, num_classes=11):
         super().__init__()
 
         # Encoder
@@ -17,7 +17,7 @@ class SegNet_Basic(nn.Module):
         self.pool2 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
         self.enc_conv3 = Sequential(Conv2d(128, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
         self.pool3 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
-        self.enc_conv4 = Sequential(nn.Conv2d(256, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.enc_conv4 = Sequential(Conv2d(256, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
         self.pool4 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
 
         # Bottleneck
@@ -40,11 +40,11 @@ class SegNet_Basic(nn.Module):
     def _initialize_weights(self, *containers):
         for modules in containers:
             for module in modules.modules():
-                if isinstance(module, nn.Conv2d):
+                if isinstance(module, Conv2d):
                     kaiming_normal_(module.weight)
                     if module.bias is not None:
                         zeros_(module.bias)
-                elif isinstance(module, nn.BatchNorm2d):
+                elif isinstance(module, BatchNorm2d):
                     ones_(module.weight)
                     zeros_(module.bias)
 
