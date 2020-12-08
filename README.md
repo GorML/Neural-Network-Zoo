@@ -1,6 +1,6 @@
-### Neural Network Model Zoo
+## Neural Network Model Zoo
 
-#### :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network architectures in:
+### :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network architectures in:
 
 :dragon: PyTorch
 
