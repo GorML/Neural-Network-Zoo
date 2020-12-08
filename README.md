@@ -1,4 +1,4 @@
-# Neural Network Zoo
+# Neural Network Model Zoo
 
 ## 🕸️ Neural network architectures implemented in PyTorch and Swift for Tensorflow mainly for educational purposes.
 
