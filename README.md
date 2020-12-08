@@ -1,12 +1,12 @@
-# Neural Network Model Zoo
+### Neural Network Model Zoo
 
-## :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network architectures in:
+#### :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network architectures in:
 
 :dragon: PyTorch
 
 :eagle: Swift for Tensorflow
 
-## :dart: Short-term goal is to assemble a model zoo of neural networks in the fields of:
+#### :dart: Short-term goal is to assemble a model zoo of neural networks in the fields of:
 
 :eyes: Computer Vision
 
@@ -18,7 +18,7 @@
 
 :mag: Image/Video Enhancement
 
-## :straight_ruler: Formatting rules are:
+#### :straight_ruler: Formatting rules are:
 
 1. References to the original [arXiv](https://arxiv.org/) papers.
 2. Single object class per every network.
@@ -26,4 +26,4 @@
 4. Focus on the original paper's architecture formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 5. Maximal first-glance understanding of modular architectures.
 
-## :monocle_face: Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting rules are also very welcome!
+#### :monocle_face: Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting rules are also very welcome!
