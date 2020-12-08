@@ -1,5 +1,5 @@
 """
-SegNet Architecture (2016): https://arxiv.org/pdf/1511.00561.pdf
+SegNet-Basic Architecture (2016): https://arxiv.org/pdf/1511.00561.pdf
 Kaiming Weight Initialization (2015): https://arxiv.org/pdf/1502.01852.pdf
 """
 from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
