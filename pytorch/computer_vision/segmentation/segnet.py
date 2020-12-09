@@ -1,7 +1,7 @@
 """
 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation (Badrinarayanan et al., 2016): https://arxiv.org/pdf/1511.00561.pdf
 """
-from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, zeros_, ones_
 
 
@@ -35,36 +35,44 @@ class SegNet(Module):
 
         # Decoder
         self.unpool1    = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv11 = Sequential(ConvTranspose2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
-        self.dec_conv12 = Sequential(ConvTranspose2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
-        self.dec_conv13 = Sequential(ConvTranspose2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec_conv11 = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec_conv12 = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec_conv13 = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
         
         self.unpool2    = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv21 = Sequential(ConvTranspose2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
-        self.dec_conv22 = Sequential(ConvTranspose2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
-        self.dec_conv23 = Sequential(ConvTranspose2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.dec_conv21 = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec_conv22 = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec_conv23 = Sequential(Conv2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
         
         self.unpool3    = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv31 = Sequential(ConvTranspose2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
-        self.dec_conv32 = Sequential(ConvTranspose2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
-        self.dec_conv33 = Sequential(ConvTranspose2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.dec_conv31 = Sequential(Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.dec_conv32 = Sequential(Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.dec_conv33 = Sequential(Conv2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
         
         self.unpool4    = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv41 = Sequential(ConvTranspose2d(128, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
-        self.dec_conv42 = Sequential(ConvTranspose2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.dec_conv41 = Sequential(Conv2d(128, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.dec_conv42 = Sequential(Conv2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
         
         self.unpool5    = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv51 = Sequential(ConvTranspose2d(64, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())   
-        self.dec_conv52 = Sequential(ConvTranspose2d(64, num_classes, kernel_size=3, padding=1), Softmax())
+        self.dec_conv51 = Sequential(Conv2d(64, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())   
+        self.dec_conv52 = Sequential(Conv2d(64, num_classes, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
-        self._initialize_weights(self.enc_conv0, self.enc_conv1, self.enc_conv2, self.enc_conv3,
-                                 self.dec_conv0, self.dec_conv1, self.dec_conv2, self.dec_conv3)
+        self._initialize_weights(self.enc_conv11, self.enc_conv12, \
+                                 self.enc_conv21, self.enc_conv22, \
+                                 self.enc_conv31, self.enc_conv32, self.enc_conv33, \
+                                 self.enc_conv41, self.enc_conv42, self.enc_conv43, \
+                                 self.enc_conv51, self.enc_conv52, self.enc_conv53, \
+                                 self.dec_conv11, self.dec_conv12, self.dec_conv13, \
+                                 self.dec_conv21, self.dec_conv22, self.dec_conv23, \
+                                 self.dec_conv31, self.dec_conv32, self.dec_conv33, \
+                                 self.dec_conv41, self.dec_conv42, \
+                                 self.dec_conv51, self.dec_conv52)
         
     def _initialize_weights(self, *containers):
         for modules in containers:
             for module in modules.modules():
-                if isinstance(module, Conv2d) or isinstance(module, ConvTranspose2d):
+                if isinstance(module, Conv2d):
                     kaiming_normal_(module.weight)
                     zeros_(module.bias)
                 elif isinstance(module, BatchNorm2d):
