@@ -10,13 +10,16 @@
 
 :eyes: Computer Vision
 
-:speech_balloon: Natural Language Processing
+:speech_balloon: Speech Recognition
+
+:books: Natural Language Processing
 
 :joystick: Reinforcement Learning
 
 :art: Image/Video Synthesis
-
 :mag: Image/Video Enhancement
+
+:dna: Geometric Deep Learning
 
 ### :straight_ruler: Formatting guidelines are:
 
