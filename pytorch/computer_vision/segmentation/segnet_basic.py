@@ -1,8 +1,7 @@
 """
-SegNet-Basic Architecture (2016): https://arxiv.org/pdf/1511.00561.pdf
-Kaiming Weight Initialization (2015): https://arxiv.org/pdf/1502.01852.pdf
+SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation (Badrinarayanan et al., 2016): https://arxiv.org/pdf/1511.00561.pdf
 """
-from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, zeros_, ones_
 
 
@@ -12,23 +11,29 @@ class SegNet_Basic(Module):
 
         # Encoder
         self.enc_conv1 = Sequential(Conv2d(in_channels, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
-        self.pool1 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.pool1     = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        
         self.enc_conv2 = Sequential(Conv2d(64, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
-        self.pool2 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.pool2     = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        
         self.enc_conv3 = Sequential(Conv2d(128, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
-        self.pool3 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.pool3     = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        
         self.enc_conv4 = Sequential(Conv2d(256, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
-        self.pool4 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
+        self.pool4     = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
 
         # Decoder
-        self.unpool4 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv4 = Sequential(ConvTranspose2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
-        self.unpool3 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv3 = Sequential(ConvTranspose2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
-        self.unpool2 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv2 = Sequential(ConvTranspose2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
-        self.unpool1 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv1 = Sequential(ConvTranspose2d(64, num_classes, kernel_size=3, padding=1), Softmax())
+        self.unpool4   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv4 = Sequential(Conv2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        
+        self.unpool3   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv3 = Sequential(Conv2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        
+        self.unpool2   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv2 = Sequential(Conv2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        
+        self.unpool1   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv1 = Sequential(Conv2d(64, num_classes, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
         self._initialize_weights(self.enc_conv0, self.enc_conv1, self.enc_conv2, self.enc_conv3,
@@ -39,8 +44,7 @@ class SegNet_Basic(Module):
             for module in modules.modules():
                 if isinstance(module, Conv2d):
                     kaiming_normal_(module.weight)
-                    if module.bias is not None:
-                        zeros_(module.bias)
+                    zeros_(module.bias)
                 elif isinstance(module, BatchNorm2d):
                     ones_(module.weight)
                     zeros_(module.bias)
@@ -53,8 +57,8 @@ class SegNet_Basic(Module):
         e4, e4_idx = self.pool4(self.enc_conv4(e3))
 
         # Decoder
-        d4 = self.dec_conv1(self.unpool1(e4, e4_idx))
-        d3 = self.dec_conv2(self.unpool2(d4, e3_idx))
-        d2 = self.dec_conv3(self.unpool3(d3, e2_idx))
-        d1 = self.dec_conv4(self.unpool4(d2, e1_idx))
-        return d1
+        d1 = self.dec_conv1(self.unpool1(e4, e4_idx))
+        d2 = self.dec_conv2(self.unpool2(d1, e3_idx))
+        d3 = self.dec_conv3(self.unpool3(d2, e2_idx))
+        d4 = self.dec_conv4(self.unpool4(d3, e1_idx))
+        return d4
