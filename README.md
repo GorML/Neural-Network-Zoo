@@ -10,6 +10,8 @@
 
 :eyes: Computer Vision
 
+- ![Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/pytorch/computer_vision/segmentation)
+
 :speech_balloon: Speech Recognition
 
 :books: Natural Language Processing
