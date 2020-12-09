@@ -23,21 +23,21 @@ class SegNet_Basic(Module):
         self.pool4     = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
 
         # Decoder
-        self.unpool4   = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv4 = Sequential(Conv2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
-        
-        self.unpool3   = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv3 = Sequential(Conv2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.unpool1   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv1 = Sequential(Conv2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
         
         self.unpool2   = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv2 = Sequential(Conv2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.dec_conv2 = Sequential(Conv2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
         
-        self.unpool1   = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec_conv1 = Sequential(Conv2d(64, num_classes, kernel_size=3, padding=1), Softmax())
+        self.unpool3   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv3 = Sequential(Conv2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        
+        self.unpool4   = MaxUnpool2d(kernel_size=2, stride=2)
+        self.dec_conv4 = Sequential(Conv2d(64, num_classes, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
-        self._initialize_weights(self.enc_conv0, self.enc_conv1, self.enc_conv2, self.enc_conv3,
-                                 self.dec_conv0, self.dec_conv1, self.dec_conv2, self.dec_conv3)
+        self._initialize_weights(self.enc_conv1, self.enc_conv2, self.enc_conv3, self.enc_conv4,
+                                 self.dec_conv1, self.dec_conv2, self.dec_conv3, self.dec_conv4)
         
     def _initialize_weights(self, *containers):
         for modules in containers:
