@@ -73,16 +73,16 @@ class SegNet(Module):
 
     def forward(self, x):
         # Encoder
-        e1, e1_idx = self.pool1(self.enc_conv1(x))
-        e2, e2_idx = self.pool2(self.enc_conv2(e1))
-        e3, e3_idx = self.pool3(self.enc_conv3(e2))
-        e4, e4_idx = self.pool4(self.enc_conv4(e3))
-        e5, e5_idx = self.pool4(self.enc_conv4(e4))
+        e1, e1_idx = self.pool1(self.enc_conv12(self.enc_conv11(x)))
+        e2, e2_idx = self.pool2(self.enc_conv22(self.enc_conv21(e1)))
+        e3, e3_idx = self.pool3(self.enc_conv33(self.enc_conv32(self.enc_conv31(e2))))
+        e4, e4_idx = self.pool4(self.enc_conv43(self.enc_conv42(self.enc_conv41(e3))))
+        e5, e5_idx = self.pool5(self.enc_conv53(self.enc_conv52(self.enc_conv51(e4))))
 
         # Decoder
-        d1 = self.dec_conv1(self.unpool1(e5, e5_idx))
-        d2 = self.dec_conv2(self.unpool2(d1, e4_idx))
-        d3 = self.dec_conv3(self.unpool3(d2, e3_idx))
-        d4 = self.dec_conv4(self.unpool4(d3, e2_idx))
-        d5 = self.dec_conv4(self.unpool4(d4, e1_idx))
+        d1 = self.dec_conv13(self.dec_conv12(self.dec_conv11(self.unpool1(e5, e5_idx))))
+        d2 = self.dec_conv23(self.dec_conv22(self.dec_conv21(self.unpool2(d1, e4_idx))))
+        d3 = self.dec_conv33(self.dec_conv32(self.dec_conv31(self.unpool3(d2, e3_idx))))
+        d4 = self.dec_conv42(self.dec_conv41(self.unpool4(d3, e4_idx)))
+        d5 = self.dec_conv52(self.dec_conv51(self.unpool5(d4, e5_idx)))
         return d5
