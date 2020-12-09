@@ -1,12 +1,12 @@
 ## Neural Network Model Zoo
 
-### :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network architectures in:
+### :question: Purpose is to create easy-to-read [arXiv](https://arxiv.org/) implementations of major neural network models in:
 
 :dragon: PyTorch
 
 :eagle: Swift for Tensorflow
 
-### :dart: Goal is to assemble a model zoo of neural networks in the fields of:
+### :dart: Goal is to assemble a bank of neural network architectures in the fields of:
 
 :eyes: Computer Vision
 
