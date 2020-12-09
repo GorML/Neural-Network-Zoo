@@ -18,12 +18,12 @@
 
 :mag: Image/Video Enhancement
 
-### :straight_ruler: Formatting rules are:
+### :straight_ruler: Formatting guidelines are:
 
 1. References to the original [arXiv](https://arxiv.org/) papers.
-2. Single object class per every network.
-3. Maximal first-glance understanding of modular architectures.
+2. Maximal first-glance understanding of modular architectures.
+3. An object class per every network, making use of inline comments.
 4. Chronological layout of learning modules, going from shallow to deeper layers.
 5. Focus on the original paper's architecture formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 
-### :monocle_face: Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting rules are also very welcome!
+### :monocle_face: Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!
