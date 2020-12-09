@@ -4,6 +4,7 @@ U-Net: Convolutional Networks for Biomedical Image Segmentation (Ronneberger et 
 from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, ReLU, MaxPool2d, Sigmoid
 from torch.nn.init import kaiming_normal_, zeros_
 
+
 class UNet(Module):
     def __init__(self, in_channels=1, num_classes=2):
         super().__init__()
