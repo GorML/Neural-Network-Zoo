@@ -6,7 +6,7 @@ from torch.nn.init import kaiming_normal_, constant_
 
 
 class SegNet(Module):
-    def __init__(self, in_channels=3, num_classes=11):
+    def __init__(self, in_channels=3, out_channels=11):
         super().__init__()
 
         # Encoder
@@ -55,7 +55,7 @@ class SegNet(Module):
         
         self.unpool5    = MaxUnpool2d(kernel_size=2, stride=2)
         self.dec_conv51 = Sequential(Conv2d(64, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())   
-        self.dec_conv52 = Sequential(Conv2d(64, num_classes, kernel_size=3, padding=1), Softmax())
+        self.dec_conv52 = Sequential(Conv2d(64, out_channels, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
         self._initialize_weights(self.enc_conv11, self.enc_conv12, \
