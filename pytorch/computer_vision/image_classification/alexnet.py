@@ -35,7 +35,7 @@ class AlexNet(Module):
             Dropout(),
             Linear(4096, 4096),
             ReLU(),
-            Linear(4096, num_classes),
+            Linear(4096, out_channels),
             Softmax()
         )
         
