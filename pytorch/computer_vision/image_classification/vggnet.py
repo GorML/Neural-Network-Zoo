@@ -1,5 +1,6 @@
 '''
-Very Deep Convolutional Networks for Large-Scale Image Recognition (Simonyan & Zisserman, 2015): https://arxiv.org/pdf/1409.1556.pdf
+"Very Deep Convolutional Networks for Large-Scale Image Recognition" (Simonyan & Zisserman, 2015):
+https://arxiv.org/pdf/1409.1556.pdf
 '''
 from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear, Softmax
 from torch.nn.init import xavier_normal_, normal_, constant_
