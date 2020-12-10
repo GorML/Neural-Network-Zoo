@@ -38,7 +38,7 @@ class VGGNet16(Module):
         
         # Classifier
         self.classifier = Sequential(
-            Linear(7 * 7 * 512, 4096), ReLU(),
+            Linear(512 * 7 * 7, 4096), ReLU(),
             Dropout(),
             Linear(4096, 4096), ReLU(),
             Dropout(),
