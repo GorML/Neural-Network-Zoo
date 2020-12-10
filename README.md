@@ -10,7 +10,8 @@
 
 :eyes: Computer Vision
 
-- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification/alexnet.py)
+- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification)
+  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification/alexnet.py)
 
 - [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/pytorch/computer_vision/semantic_segmentation)
   - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/semantic_segmentation/unet.py)
