@@ -6,7 +6,7 @@ from torch.nn.init import kaiming_normal_, constant_
 
 
 class UNet(Module):
-    def __init__(self, in_channels=1, num_classes=2):
+    def __init__(self, in_channels=1, out_channels=1):
         super().__init__()
 
         # Encoder
