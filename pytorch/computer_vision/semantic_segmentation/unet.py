@@ -7,7 +7,7 @@ from torch.nn.init import kaiming_normal_, constant_
 
 
 class UNet(Module):
-    def __init__(self, in_channels=3, out_channels=1):
+    def __init__(self, in_channels=3, out_channels=2):
         super().__init__()
 
         # Encoder
@@ -48,7 +48,7 @@ class UNet(Module):
         self.dec4_1  = Sequential(Conv2d(128, 64, kernel_size=3), ReLU())
         self.dec4_2  = Sequential(Conv2d(64, 64, kernel_size=3), ReLU())
         
-        self.dec_fin = Sequential(ConvTranspose2d(64, out_channels, kernel_size=1), Sigmoid())
+        self.dec_fin = Sequential(Conv2d(64, out_channels, kernel_size=1), Sigmoid())
         
         # Weight Initialization
         self._initialize_weights(self.enc1_1,  self.enc1_2, \
