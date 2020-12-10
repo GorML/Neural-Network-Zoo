@@ -1,5 +1,6 @@
 """
-SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation (Badrinarayanan et al., 2016): https://arxiv.org/pdf/1511.00561.pdf
+"SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation" (Badrinarayanan et al., 2016):
+https://arxiv.org/pdf/1511.00561.pdf
 """
 from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
 from torch.nn.init import kaiming_normal_, constant_
