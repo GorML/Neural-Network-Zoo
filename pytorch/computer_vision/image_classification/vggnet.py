@@ -5,7 +5,7 @@ from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linea
 from torch.nn.init import xavier_normal_, normal_, constant_
 
 
-class VGGNet16(Module):
+class VGGNet(Module):
     def __init__(self, in_channels=3, out_channels=1000):
         super().__init__()
         
