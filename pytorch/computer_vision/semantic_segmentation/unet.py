@@ -47,7 +47,7 @@ class UNet(Module):
         self.dec_conv41 = Sequential(Conv2d(128, 64, kernel_size=3), ReLU())
         self.dec_conv42 = Sequential(Conv2d(64, 64, kernel_size=3), ReLU())
         
-        self.dec_last   = Sequential(ConvTranspose2d(64, num_classes, kernel_size=1), Sigmoid())
+        self.dec_last   = Sequential(ConvTranspose2d(64, out_channels, kernel_size=1), Sigmoid())
         
         # Weight Initialization
         self._initialize_weights(self.enc_conv11,  self.enc_conv12, \
