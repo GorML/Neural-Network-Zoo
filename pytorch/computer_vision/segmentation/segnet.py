@@ -2,7 +2,7 @@
 SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation (Badrinarayanan et al., 2016): https://arxiv.org/pdf/1511.00561.pdf
 """
 from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
-from torch.nn.init import kaiming_normal_, zeros_, ones_
+from torch.nn.init import kaiming_normal_, constant_
 
 
 class SegNet(Module):
@@ -73,11 +73,11 @@ class SegNet(Module):
         for modules in containers:
             for module in modules.modules():
                 if isinstance(module, Conv2d):
-                    kaiming_normal_(module.weight)
-                    zeros_(module.bias)
+                    kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
+                    constant_(module.bias, 0)
                 elif isinstance(module, BatchNorm2d):
-                    ones_(module.weight)
-                    zeros_(module.bias)
+                    constant_(module.weight, 1)
+                    constant_(module.bias, 0)
 
     def forward(self, x):
         # Encoder
