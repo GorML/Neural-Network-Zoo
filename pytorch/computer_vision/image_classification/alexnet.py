@@ -1,5 +1,6 @@
 '''
-ImageNet Classification with Deep Convolutional Neural Networks (Krizhevsky et al., 2012): http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf
+"ImageNet Classification with Deep Convolutional Neural Networks" (Krizhevsky et al., 2012):
+http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf
 '''
 from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear, Softmax
 from torch.nn.init import normal_, constant_
