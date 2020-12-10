@@ -6,11 +6,11 @@ from torch.nn.init import normal_, constant_
 
 
 class AlexNet(Module):
-    def __init__(self, in_channels=3, num_classes=1000):
+    def __init__(self, in_channels=3, out_channels=1000):
         super().__init__()
         
         # Feature Extractor
-        self.extractor = nn.Sequential(
+        self.extractor = Sequential(
             Conv2d(in_channels, 96, kernel_size=11, stride=4),
             ReLU(),
             MaxPool2d(kernel_size=3, stride=2),
@@ -28,7 +28,7 @@ class AlexNet(Module):
         )
         
         # Classifier
-        self.classifier = nn.Sequential(
+        self.classifier = Sequential(
             Dropout(),
             Linear(256 * 6 * 6, 4096),
             ReLU(),
