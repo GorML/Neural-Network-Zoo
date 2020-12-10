@@ -2,7 +2,7 @@
 U-Net: Convolutional Networks for Biomedical Image Segmentation (Ronneberger et al., 2015): https://arxiv.org/pdf/1505.04597.pdf
 """
 from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, ReLU, MaxPool2d, Sigmoid
-from torch.nn.init import kaiming_normal_, zeros_
+from torch.nn.init import kaiming_normal_, constant_
 
 
 class UNet(Module):
@@ -54,7 +54,7 @@ class UNet(Module):
                                  self.enc_conv21,  self.enc_conv22, \
                                  self.enc_conv31,  self.enc_conv32, \
                                  self.enc_conv41,  self.enc_conv42, \
-                                 self.b1,          selfb2, \
+                                 self.b1,          self.b2, \
                                  self.dec_upconv1, self.dec_conv11, self.dec_conv12, \
                                  self.dec_upconv2, self.dec_conv21, self.dec_conv22, \
                                  self.dec_upconv3, self.dec_conv31, self.dec_conv32, \
@@ -65,8 +65,8 @@ class UNet(Module):
         for modules in containers:
             for module in modules.modules():
                 if isinstance(module, Conv2d) or isinstance(module, ConvTranspose2d):
-                    kaiming_normal_(module.weight)
-                    zeros_(module.bias)
+                    kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
+                    constant_(module.bias, 0)
 
     def forward(self, x):
         # Encoder
