@@ -1,5 +1,6 @@
 """
-U-Net: Convolutional Networks for Biomedical Image Segmentation (Ronneberger et al., 2015): https://arxiv.org/pdf/1505.04597.pdf
+"U-Net: Convolutional Networks for Biomedical Image Segmentation" (Ronneberger et al., 2015):
+https://arxiv.org/pdf/1505.04597.pdf
 """
 from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, ReLU, MaxPool2d, Sigmoid
 from torch.nn.init import kaiming_normal_, constant_
