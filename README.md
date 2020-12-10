@@ -20,9 +20,9 @@
 
 :joystick: Reinforcement Learning
 
-:art: Image/Video Synthesis
+:art: Image/Video/Audio Synthesis
 
-:mag: Image/Video Enhancement
+:mag: Image/Video/Audio Enhancement
 
 :dna: Geometric Deep Learning
 
