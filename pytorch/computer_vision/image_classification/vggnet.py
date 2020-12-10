@@ -7,7 +7,7 @@ from torch.nn.init import xavier_normal_, normal_, constant_
 
 
 class VGGNet(Module):
-    def __init__(self, in_channels=3, out_channels=1000):
+    def __init__(self, in_channels=3, num_classes=1000):
         super().__init__()
         
         # Feature Extractor
@@ -43,7 +43,7 @@ class VGGNet(Module):
             Dropout(),
             Linear(4096, 4096), ReLU(),
             Dropout(),
-            Linear(4096, out_channels), Softmax()
+            Linear(4096, num_classes), Softmax()
         )
         
         # Weight Initialization
