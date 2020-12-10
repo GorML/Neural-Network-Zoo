@@ -11,32 +11,26 @@ class AlexNet(Module):
         
         # Feature Extractor
         self.extractor = Sequential(
-            Conv2d(in_channels, 96, kernel_size=11, stride=4),
-            ReLU(),
+            Conv2d(in_channels, 96, kernel_size=11, stride=4), ReLU(),
             MaxPool2d(kernel_size=3, stride=2),
-            Conv2d(96, 256, kernel_size=5, padding=2),
-            ReLU(),
+            
+            Conv2d(96, 256, kernel_size=5, padding=2), ReLU(),
             MaxPool2d(kernel_size=3, stride=2),
-            Conv2d(256, 384, kernel_size=3, padding=1),
-            ReLU(),
-            Conv2d(384, 384, kernel_size=3, padding=1),
-            ReLU(),
-            Conv2d(384, 256, kernel_size=3, padding=1),
-            ReLU(),
+            
+            Conv2d(256, 384, kernel_size=3, padding=1), ReLU(),
+            Conv2d(384, 384, kernel_size=3, padding=1), ReLU(),
+            Conv2d(384, 256, kernel_size=3, padding=1), ReLU(),
             MaxPool2d(kernel_size=3, stride=2),
             Flatten()
         )
         
         # Classifier
         self.classifier = Sequential(
+            Linear(256 * 6 * 6, 4096), ReLU(),
             Dropout(),
-            Linear(256 * 6 * 6, 4096),
-            ReLU(),
+            Linear(4096, 4096), ReLU(),
             Dropout(),
-            Linear(4096, 4096),
-            ReLU(),
-            Linear(4096, out_channels),
-            Softmax()
+            Linear(4096, out_channels), Softmax()
         )
         
         # Weight Initialization
