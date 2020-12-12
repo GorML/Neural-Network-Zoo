@@ -42,7 +42,7 @@ class UNet(Module):
         
         self.upconv3 = Sequential(ConvTranspose2d(256, 128, kernel_size=2, stride=2), ReLU())
         self.dec3_1  = Sequential(Conv2d(256, 128, kernel_size=3), ReLU())
-        self.dec3_1  = Sequential(Conv2d(128, 128, kernel_size=3), ReLU())
+        self.dec3_2  = Sequential(Conv2d(128, 128, kernel_size=3), ReLU())
         
         self.upconv4 = Sequential(ConvTranspose2d(128, 64, kernel_size=2, stride=2), ReLU())
         self.dec4_1  = Sequential(Conv2d(128, 64, kernel_size=3), ReLU())
@@ -56,10 +56,10 @@ class UNet(Module):
                                  self.enc3_1,  self.enc3_2, \
                                  self.enc4_1,  self.enc4_2, \
                                  self.b1,          self.b2, \
-                                 self.dec_upconv1, self.dec1_1, self.dec1_2, \
-                                 self.dec_upconv2, self.dec2_1, self.dec2_2, \
-                                 self.dec_upconv3, self.dec3_1, self.dec3_2, \
-                                 self.dec_upconv4, self.dec4_1, self.dec4_2, \
+                                 self.upconv1, self.dec1_1, self.dec1_2, \
+                                 self.upconv2, self.dec2_1, self.dec2_2, \
+                                 self.upconv3, self.dec3_1, self.dec3_2, \
+                                 self.upconv4, self.dec4_1, self.dec4_2, \
                                  self.dec_fin)
                                  
     def _initialize_weights(self, *containers):
