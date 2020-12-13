@@ -8,7 +8,7 @@
 
 ### :dart: Goal is to assemble a bank of neural network models in the fields of:
 
-:eyes: Computer Vision
+#### :eyes: Computer Vision
 
 - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification)
   - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification/alexnet.py)
@@ -18,17 +18,17 @@
   - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/semantic_segmentation/unet.py)
   - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/semantic_segmentation/segnet.py)
 
-:speech_balloon: Speech Recognition
+#### :speech_balloon: Speech Recognition
 
-:books: Natural Language Processing
+#### :books: Natural Language Processing
 
-:joystick: Reinforcement Learning
+#### :joystick: Reinforcement Learning
 
-:art: Image/Video/Audio Synthesis
+#### :art: Image/Video/Audio Synthesis
 
-:mag: Image/Video/Audio Enhancement
+#### :mag: Image/Video/Audio Enhancement
 
-:dna: Geometric Deep Learning
+#### :dna: Geometric Deep Learning
 
 ### :straight_ruler: Formatting guidelines are:
 
