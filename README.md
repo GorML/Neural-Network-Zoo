@@ -2,9 +2,9 @@
 
 ### :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
-:dragon: PyTorch
+#### :dragon: PyTorch
 
-:eagle: Swift for Tensorflow
+#### :eagle: Swift for Tensorflow
 
 ### :dart: Goal is to assemble a bank of neural network models in the fields of:
 
