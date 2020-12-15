@@ -32,19 +32,19 @@ class UNet(Module):
         self.b2 = Sequential(Conv2d(1024, 1024, kernel_size=3), ReLU())
 
         # Decoder
-        self.upconv1 = Sequential(ConvTranspose2d(1024, 512, kernel_size=2, stride=2), ReLU())
+        self.upconv1 = Sequential(ConvTranspose2d(1024, 512, kernel_size=2, stride=2))
         self.dec1_1  = Sequential(Conv2d(1024, 512, kernel_size=3), ReLU())
         self.dec1_2  = Sequential(Conv2d(512, 512, kernel_size=3), ReLU())
         
-        self.upconv2 = Sequential(ConvTranspose2d(512, 256, kernel_size=2, stride=2), ReLU())
+        self.upconv2 = Sequential(ConvTranspose2d(512, 256, kernel_size=2, stride=2))
         self.dec2_1  = Sequential(Conv2d(512, 256, kernel_size=3), ReLU())
         self.dec2_2  = Sequential(Conv2d(256, 256, kernel_size=3), ReLU())
         
-        self.upconv3 = Sequential(ConvTranspose2d(256, 128, kernel_size=2, stride=2), ReLU())
+        self.upconv3 = Sequential(ConvTranspose2d(256, 128, kernel_size=2, stride=2))
         self.dec3_1  = Sequential(Conv2d(256, 128, kernel_size=3), ReLU())
         self.dec3_2  = Sequential(Conv2d(128, 128, kernel_size=3), ReLU())
         
-        self.upconv4 = Sequential(ConvTranspose2d(128, 64, kernel_size=2, stride=2), ReLU())
+        self.upconv4 = Sequential(ConvTranspose2d(128, 64, kernel_size=2, stride=2))
         self.dec4_1  = Sequential(Conv2d(128, 64, kernel_size=3), ReLU())
         self.dec4_2  = Sequential(Conv2d(64, 64, kernel_size=3), ReLU())
         
