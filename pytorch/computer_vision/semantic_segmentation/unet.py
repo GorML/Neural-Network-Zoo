@@ -55,7 +55,7 @@ class UNet(Module):
                                  self.enc2_1,  self.enc2_2, \
                                  self.enc3_1,  self.enc3_2, \
                                  self.enc4_1,  self.enc4_2, \
-                                 self.b1,          self.b2, \
+                                 self.b1,      self.b2, \
                                  self.upconv1, self.dec1_1, self.dec1_2, \
                                  self.upconv2, self.dec2_1, self.dec2_2, \
                                  self.upconv3, self.dec3_1, self.dec3_2, \
@@ -71,18 +71,25 @@ class UNet(Module):
 
     def forward(self, x):
         # Encoder
-        e1 = self.pool1(self.enc1_2(self.enc1_1(x)))
-        e2 = self.pool2(self.enc2_2(self.enc2_1(e1)))
-        e3 = self.pool3(self.enc3_2(self.enc3_1(e2)))
-        e4 = self.pool4(self.enc4_2(self.enc4_1(e3)))
+        e1_conv = self.enc1_2(self.enc1_1(x))
+        e1_pool = self.pool1(e1_conv)
+
+        e2_conv = self.enc2_2(self.enc2_1(e1_pool))
+        e2_pool = self.pool2(e2_conv)
+
+        e3_conv = self.enc3_2(self.enc3_1(e2_pool))
+        e3_pool = self.pool3(e3_conv)
+
+        e4_conv = self.enc4_2(self.enc4_1(e3_pool))
+        e4_pool = self.pool4(e4_conv)
         
         #Bottleneck
-        b = self.b2(self.b1(e4))
+        b = self.b2(self.b1(e4_pool))
 
         # Decoder
-        d1 = self.dec1_2(self.dec1_1(torch.cat([e4, self.upconv1(b)],  dim=1)))
-        d2 = self.dec2_2(self.dec2_1(torch.cat([e3, self.upconv2(d1)], dim=1)))
-        d3 = self.dec3_2(self.dec3_1(torch.cat([e2, self.upconv3(d2)], dim=1)))
-        d4 = self.dec4_2(self.dec4_1(torch.cat([e1, self.upconv4(d3)], dim=1)))
+        d1 = self.dec1_2(self.dec1_1(torch.cat([e4_conv, self.upconv1(b)],  dim=1)))
+        d2 = self.dec2_2(self.dec2_1(torch.cat([e3_conv, self.upconv1(d1)], dim=1)))
+        d3 = self.dec3_2(self.dec3_1(torch.cat([e2_conv, self.upconv1(d2)], dim=1)))
+        d4 = self.dec4_2(self.dec4_1(torch.cat([e1_conv, self.upconv1(d3)], dim=1)))
         d_ = self.dec_fin(d4)
         return d_
