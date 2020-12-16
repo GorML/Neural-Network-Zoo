@@ -92,6 +92,6 @@ class SegNet(Module):
         d1 = self.dec1_3(self.dec1_2(self.dec1_1(self.unpool1(e5, e5_idx))))
         d2 = self.dec2_3(self.dec2_2(self.dec2_1(self.unpool2(d1, e4_idx))))
         d3 = self.dec3_3(self.dec3_2(self.dec3_1(self.unpool3(d2, e3_idx))))
-        d4 = self.dec4_2(self.dec4_1(self.unpool4(d3, e4_idx)))
-        d5 = self.dec5_2(self.dec5_1(self.unpool5(d4, e5_idx)))
+        d4 = self.dec4_2(self.dec4_1(self.unpool4(d3, e2_idx)))
+        d5 = self.dec5_2(self.dec5_1(self.unpool5(d4, e1_idx)))
         return d5
