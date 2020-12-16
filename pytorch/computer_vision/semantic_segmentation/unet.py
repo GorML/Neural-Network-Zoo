@@ -88,8 +88,8 @@ class UNet(Module):
 
         # Decoder
         d1 = self.dec1_2(self.dec1_1(torch.cat([e4_conv, self.upconv1(b)],  dim=1)))
-        d2 = self.dec2_2(self.dec2_1(torch.cat([e3_conv, self.upconv1(d1)], dim=1)))
-        d3 = self.dec3_2(self.dec3_1(torch.cat([e2_conv, self.upconv1(d2)], dim=1)))
-        d4 = self.dec4_2(self.dec4_1(torch.cat([e1_conv, self.upconv1(d3)], dim=1)))
+        d2 = self.dec2_2(self.dec2_1(torch.cat([e3_conv, self.upconv2(d1)], dim=1)))
+        d3 = self.dec3_2(self.dec3_1(torch.cat([e2_conv, self.upconv3(d2)], dim=1)))
+        d4 = self.dec4_2(self.dec4_1(torch.cat([e1_conv, self.upconv4(d3)], dim=1)))
         d_ = self.dec_fin(d4)
         return d_
