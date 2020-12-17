@@ -30,7 +30,7 @@ class VGG16(Module):
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             MaxPool2d(kernel_size=2, stride=2),
             
-            Conv2d(256, 512, kernel_size=3, padding=1), ReLU(),
+            Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             MaxPool2d(kernel_size=2, stride=2),
