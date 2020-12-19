@@ -18,7 +18,7 @@ class LeNet5(Module):
         )
         
         # Classifier
-        self.cls = Sequential(
+        self.classifier = Sequential(
             Linear(256, 120), ReLU(),
             Linear(120, 84), ReLU(),
             Linear(84, num_classes), ReLU()
@@ -26,5 +26,5 @@ class LeNet5(Module):
         
     def forward(self, x):
         ext = self.extractor(x)
-        cls = self.cls(ext)
+        cls = self.classifier(ext)
         return cls
