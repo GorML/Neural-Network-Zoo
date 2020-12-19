@@ -59,18 +59,13 @@ class SegNet(Module):
                                   Conv2d(64, out_channels, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
-        self._initialize_weights(self.enc1, self.enc2, self.enc3, self.enc4, self.enc5,
-                                 self.dec1, self.dec2, self.dec3, self.dec4, self.dec5)
-        
-    def _initialize_weights(self, *containers):
-        for modules in containers:
-            for module in modules.modules():
-                if isinstance(module, Conv2d):
-                    kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
-                    constant_(module.bias, 0)
-                elif isinstance(module, BatchNorm2d):
-                    constant_(module.weight, 1)
-                    constant_(module.bias, 0)
+        for module in self.modules():
+            if isinstance(module, Conv2d):
+                kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
+                constant_(module.bias, 0)
+            elif isinstance(module, BatchNorm2d):
+                constant_(module.weight, 1)
+                constant_(module.bias, 0)
 
     def forward(self, x):
         # Encoder
