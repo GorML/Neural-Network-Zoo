@@ -6,56 +6,70 @@ from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, M
 from torch.nn.init import kaiming_normal_, constant_
 
 
+class Conv_Module(Module):
+    def __init__(self, in_channels, out_channels, **kwargs):
+        super().__init__()
+        
+        self.block = Sequential(
+            Conv2d(in_channels, out_channels, **kwargs),
+            BatchNorm2d(out_channels),
+            ReLU()
+        )
+
+    def forward(self, x):
+        return self.block(x)
+
+
 class SegNet(Module):
     def __init__(self, in_channels=3, out_channels=11):
         super().__init__()
 
         # Encoder
-        self.enc1  = Sequential(Conv2d(in_channels, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU(),
-                                Conv2d(64, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.enc1  = Sequential(Conv_Module(in_channels, 64, kernel_size=3, padding=1),
+                                Conv_Module(64, 64, kernel_size=3, padding=1))
         self.pool1 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
         
-        self.enc2  = Sequential(Conv2d(64, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU(),
-                                Conv2d(128, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.enc2  = Sequential(Conv_Module(64, 128, kernel_size=3, padding=1),
+                                Conv_Module(128, 128, kernel_size=3, padding=1))
         self.pool2 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
         
-        self.enc3  = Sequential(Conv2d(128, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU(),
-                                Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU(),
-                                Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.enc3  = Sequential(Conv_Module(128, 256, kernel_size=3, padding=1),
+                                Conv_Module(256, 256, kernel_size=3, padding=1),
+                                Conv_Module(256, 256, kernel_size=3, padding=1))
         self.pool3 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
         
-        self.enc4  = Sequential(Conv2d(256, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.enc4  = Sequential(Conv_Module(256, 512, kernel_size=3, padding=1),
+                                Conv_Module(512, 512, kernel_size=3, padding=1),
+                                Conv_Module(512, 512, kernel_size=3, padding=1))
         self.pool4 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
         
-        self.enc5  = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.enc5  = Sequential(Conv_Module(512, 512, kernel_size=3, padding=1),
+                                Conv_Module(512, 512, kernel_size=3, padding=1),
+                                Conv_Module(512, 512, kernel_size=3, padding=1))
         self.pool5 = MaxPool2d(kernel_size=2, stride=2, return_indices=True)
 
         # Decoder
         self.unpool1 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec1    = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                  Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                  Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU())
+        self.dec1    = Sequential(Conv_Module(512, 512, kernel_size=3, padding=1),
+                                  Conv_Module(512, 512, kernel_size=3, padding=1),
+                                  Conv_Module(512, 512, kernel_size=3, padding=1))
         
         self.unpool2 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec2    = Sequential(Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                  Conv2d(512, 512, kernel_size=3, padding=1), BatchNorm2d(512), ReLU(),
-                                  Conv2d(512, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU())
+        self.dec2    = Sequential(Conv_Module(512, 512, kernel_size=3, padding=1),
+                                  Conv_Module(512, 512, kernel_size=3, padding=1),
+                                  Conv_Module(512, 256, kernel_size=3, padding=1))
         
         self.unpool3 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec3    = Sequential(Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU(),
-                                  Conv2d(256, 256, kernel_size=3, padding=1), BatchNorm2d(256), ReLU(),
-                                  Conv2d(256, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU())
+        self.dec3    = Sequential(Conv_Module(256, 256, kernel_size=3, padding=1),
+                                  Conv_Module(256, 256, kernel_size=3, padding=1),
+                                  Conv_Module(256, 128, kernel_size=3, padding=1))
         
         self.unpool4 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec4    = Sequential(Conv2d(128, 128, kernel_size=3, padding=1), BatchNorm2d(128), ReLU(),
-                                  Conv2d(128, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU())
+        self.dec4    = Sequential(Conv_Module(128, 128, kernel_size=3, padding=1),
+                                  Conv_Module(128, 64, kernel_size=3, padding=1))
         
         self.unpool5 = MaxUnpool2d(kernel_size=2, stride=2)
-        self.dec5    = Sequential(Conv2d(64, 64, kernel_size=3, padding=1), BatchNorm2d(64), ReLU(),
+        self.dec5    = Sequential(Conv_Module(64, 64, kernel_size=3, padding=1),
                                   Conv2d(64, out_channels, kernel_size=3, padding=1), Softmax())
         
         # Weight Initialization
