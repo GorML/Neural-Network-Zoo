@@ -33,8 +33,7 @@ class VGG16(Module):
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
-            MaxPool2d(kernel_size=2, stride=2),
-            Flatten()
+            MaxPool2d(kernel_size=2, stride=2), Flatten()
         )
         
         # Classifier
@@ -47,17 +46,13 @@ class VGG16(Module):
         )
         
         # Weight Initialization
-        self._initialize_weights(self.extractor, self.classifier)
-        
-    def _initialize_weights(self, *containers):
-        for modules in containers:
-            for module in modules.modules():
-                if isinstance(module, Conv2d):
-                    xavier_normal_(module.weight)
-                    constant_(module.bias, 0)
-                elif isinstance(module, Linear):
-                    normal_(module.weight, std=0.01)
-                    constant_(module.bias, 0)
+        for module in self.modules():
+            if isinstance(module, Conv2d):
+                xavier_normal_(module.weight)
+                constant_(module.bias, 0)
+            elif isinstance(module, Linear):
+                normal_(module.weight, std=0.01)
+                constant_(module.bias, 0)
 
     def forward(self, x):
         ext = self.extractor(x)
