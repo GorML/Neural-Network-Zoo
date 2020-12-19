@@ -21,8 +21,7 @@ class AlexNet(Module):
             Conv2d(256, 384, kernel_size=3, padding=1), ReLU(),
             Conv2d(384, 384, kernel_size=3, padding=1), ReLU(),
             Conv2d(384, 256, kernel_size=3, padding=1), ReLU(),
-            MaxPool2d(kernel_size=3, stride=2),
-            Flatten()
+            MaxPool2d(kernel_size=3, stride=2), Flatten()
         )
         
         # Classifier
@@ -35,14 +34,10 @@ class AlexNet(Module):
         )
         
         # Weight Initialization
-        self._initialize_weights(self.extractor, self.classifier)
-        
-    def _initialize_weights(self, *containers):
-        for modules in containers:
-            for module in modules.modules():
-                if isinstance(module, Conv2d) or isinstance(module, Linear):
-                    normal_(module.weight, std=0.01)
-                    constant_(module.bias, 1)
+        for module in self.modules():
+            if isinstance(module, Conv2d) or isinstance(module, Linear):
+                normal_(module.weight, std=0.01)
+                constant_(module.bias, 1)
         
 
     def forward(self, x):
