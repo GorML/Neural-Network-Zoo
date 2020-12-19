@@ -10,13 +10,14 @@
 
 #### :eyes: Computer Vision
 
-- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification)
-  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification/alexnet.py)
-  - [VGG16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/image_classification/vgg16.py)
+- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification)
+  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py)
+  - [VGG16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG16.py)
+  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py)
 
-- [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/pytorch/computer_vision/semantic_segmentation)
-  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/semantic_segmentation/unet.py)
-  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/pytorch/computer_vision/semantic_segmentation/segnet.py)
+- [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer%20Vision/Semantic%20Segmentation)
+  - [UNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/UNet.py)
+  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py)
 
 #### :speech_balloon: Speech Recognition
 
