@@ -39,7 +39,6 @@ class AlexNet(Module):
                 normal_(module.weight, std=0.01)
                 constant_(module.bias, 1)
         
-
     def forward(self, x):
         ext = self.extractor(x)
         cls = self.classifier(ext)
