@@ -29,38 +29,31 @@ class UNet(Module):
         
         # Bottleneck
         self.b = Sequential(Conv2d(512, 1024, kernel_size=3), ReLU(),
-                            Conv2d(1024, 512, kernel_size=3), ReLU())
+                            Conv2d(1024, 1024, kernel_size=3), ReLU())
 
         # Decoder
-        self.upconv1 = Sequential(ConvTranspose2d(512, 512, kernel_size=2, stride=2))
+        self.upconv1 = Sequential(ConvTranspose2d(1024, 512, kernel_size=2, stride=2))
         self.dec1    = Sequential(Conv2d(1024, 512, kernel_size=3), ReLU(),
-                                  Conv2d(512, 256, kernel_size=3), ReLU())
+                                  Conv2d(512, 512, kernel_size=3), ReLU())
         
-        self.upconv2 = Sequential(ConvTranspose2d(256, 256, kernel_size=2, stride=2))
+        self.upconv2 = Sequential(ConvTranspose2d(512, 256, kernel_size=2, stride=2))
         self.dec2    = Sequential(Conv2d(512, 256, kernel_size=3), ReLU(),
-                                  Conv2d(256, 128, kernel_size=3), ReLU())
+                                  Conv2d(256, 256, kernel_size=3), ReLU())
         
-        self.upconv3 = Sequential(ConvTranspose2d(128, 128, kernel_size=2, stride=2))
+        self.upconv3 = Sequential(ConvTranspose2d(256, 128, kernel_size=2, stride=2))
         self.dec3    = Sequential(Conv2d(256, 128, kernel_size=3), ReLU(),
-                                  Conv2d(128, 64, kernel_size=3), ReLU())
+                                  Conv2d(128, 128, kernel_size=3), ReLU())
         
-        self.upconv4 = Sequential(ConvTranspose2d(64, 64, kernel_size=2, stride=2))
+        self.upconv4 = Sequential(ConvTranspose2d(128, 64, kernel_size=2, stride=2))
         self.dec4    = Sequential(Conv2d(128, 64, kernel_size=3), ReLU(),
                                   Conv2d(64, 64, kernel_size=3), ReLU(),
                                   Conv2d(64, out_channels, kernel_size=1), Softmax())
         
         # Weight Initialization
-        self._initialize_weights(self.enc1, self.enc2, self.enc3, self.enc4,
-                                 self.b,
-                                 self.upconv1, self.upconv2, self.upconv3, self.upconv4,
-                                 self.dec1, self.dec2, self.dec3, self.dec4)
-                                 
-    def _initialize_weights(self, *containers):
-        for modules in containers:
-            for module in modules.modules():
-                if isinstance(module, Conv2d) or isinstance(module, ConvTranspose2d):
-                    kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
-                    constant_(module.bias, 0)
+        for module in self.modules():
+            if isinstance(module, Conv2d) or isinstance(module, ConvTranspose2d):
+                kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
+                constant_(module.bias, 0)
 
     def forward(self, x):
         # Encoder
