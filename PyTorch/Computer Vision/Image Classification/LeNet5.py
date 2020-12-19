@@ -18,7 +18,7 @@ class LeNet5(Module):
         )
         
         # Classifier
-        self.fc1 = Sequential(
+        self.cls = Sequential(
             Linear(256, 120), ReLU(),
             Linear(120, 84), ReLU(),
             Linear(84, num_classes), ReLU()
