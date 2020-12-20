@@ -12,13 +12,13 @@
 
 - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification)
   - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/LeNet-5.py) :dragon:
-  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py)
-  - [VGG-16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-16.py)
-  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py)
+  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py) :dragon:
+  - [VGG-16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-16.py) :dragon:
+  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py) :dragon:
 
 - [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer%20Vision/Semantic%20Segmentation)
-  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/U-Net.py)
-  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py)
+  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/U-Net.py) :dragon:
+  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py) :dragon:
 
 #### :speech_balloon: Speech Recognition
 
