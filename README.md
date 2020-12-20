@@ -32,7 +32,7 @@
 
 #### :dna: Geometric Deep Learning
 
-### :straight_ruler: Formatting guidelines are:
+## :straight_ruler: Formatting guidelines are:
 
 1. References to the original [arXiv](https://arxiv.org/) papers.
 2. Easy first-glance understanding of modular architectures.
@@ -40,4 +40,4 @@
 4. Single class/structure per every network with clarifying inline comments for bigger blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
 5. Focus on the original paper's formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 
-### :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
+## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
