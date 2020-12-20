@@ -51,7 +51,7 @@ class UNet(Module):
         
         # Weight Initialization
         for module in self.modules():
-            if isinstance(module, Conv2d) or isinstance(module, ConvTranspose2d):
+            if isinstance(module, (Conv2d, ConvTranspose2d)):
                 kaiming_normal_(module.weight, mode='fan_out', nonlinearity='relu')
                 constant_(module.bias, 0)
 
