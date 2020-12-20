@@ -35,7 +35,7 @@ class AlexNet(Module):
         
         # Weight Initialization
         for module in self.modules():
-            if isinstance(module, Conv2d) or isinstance(module, Linear):
+            if isinstance(module, (Conv2d, Linear)):
                 normal_(module.weight, std=0.01)
                 constant_(module.bias, 1)
         
