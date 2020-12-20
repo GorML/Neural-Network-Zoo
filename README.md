@@ -1,12 +1,12 @@
-## Neural Network Model Zoo
+# Neural Network Model Zoo
 
-### :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
+## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
 #### :fire: PyTorch
 
 #### :wind_face: Swift for Tensorflow
 
-### :dart: Goal is to assemble a bank of neural network models in the fields of:
+## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
 #### :eyes: Computer Vision
 
