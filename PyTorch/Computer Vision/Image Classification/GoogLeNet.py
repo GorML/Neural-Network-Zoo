@@ -2,7 +2,7 @@
 "Going deeper with convolutions" (Szegedy et al., 2014):
 https://arxiv.org/pdf/1409.4842.pdf
 '''
-from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, Dropout, Flatten, Linear, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, AdaptiveAvgPool2d, Dropout, Flatten, Linear, Softmax
 from torch.nn.init import kaiming_normal_, normal_, constant_
 
 
