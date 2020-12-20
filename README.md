@@ -4,7 +4,7 @@
 
 #### :fire: PyTorch
 
-#### :ocean: Swift for Tensorflow
+#### :wind_face: Swift for Tensorflow
 
 ### :dart: Goal is to assemble a bank of neural network models in the fields of:
 
