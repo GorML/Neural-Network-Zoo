@@ -32,7 +32,7 @@
 
 #### :dna: Geometric Deep Learning
 
-## :straight_ruler: Formatting guidelines are:
+## :triangular_ruler: Formatting guidelines are:
 
 1. References to the original [arXiv](https://arxiv.org/) papers.
 2. Easy first-glance understanding of modular architectures.
