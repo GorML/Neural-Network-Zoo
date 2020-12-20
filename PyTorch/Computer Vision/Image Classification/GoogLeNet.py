@@ -6,36 +6,30 @@ from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, A
 from torch.nn.init import kaiming_normal_, normal_, constant_
 
 
-class Conv_Module(Module):
-    def __init__(self, in_channels, out_channels, **kwargs):
-        super().__init__()
-        
-        self.block = Sequential(
-            Conv2d(in_channels, out_channels, **kwargs),
-            BatchNorm2d(out_channels),
-            ReLU()
-        )
-
-    def forward(self, x):
-        return self.block(x)
+def conv_block(in_channels, out_channels, **kwargs):
+    return Sequential(
+        Conv2d(in_channels, out_channels, **kwargs),
+        BatchNorm2d(out_channels),
+        ReLU()
+    )
 
 
 class Inception_Module(Module): 
     def __init__(self, in_channels, ch1x1, ch3x3red, ch3x3, ch5x5red, ch5x5, pool_proj):
         super().__init__()
 
-        self.block1 = Conv_Module(in_channels, ch1x1, kernel_size=1)
+        self.block1 = conv_block(in_channels, ch1x1, kernel_size=1)
         self.block2 = Sequential(
-            Conv_Module(in_channels, ch3x3red, kernel_size=1),
-            Conv_Module(ch3x3red, ch3x3, kernel_size=3, padding=1)
+            conv_block(in_channels, ch3x3red, kernel_size=1),
+            conv_block(ch3x3red, ch3x3, kernel_size=3, padding=1)
         )
         self.block3 = Sequential(
-            Conv_Module(in_channels, ch5x5red, kernel_size=1),
-            Conv_Module(ch5x5red, ch5x5, kernel_size=3, padding=1)
+            conv_block(in_channels, ch5x5red, kernel_size=1),
+            conv_block(ch5x5red, ch5x5, kernel_size=3, padding=1)
         )
         self.block4 = Sequential(
             MaxPool2d(kernel_size=3, stride=1, padding=1, ceil_mode=True),
-            Conv_Module(in_channels, pool_proj, kernel_size=1)
+            conv_block(in_channels, pool_proj, kernel_size=1)
         )
 
     def forward(self, x):
@@ -48,10 +42,10 @@ class GoogLeNet(Module):
         super().__init__()
         
         # Feature Extractor
-        self.conv1    = Conv_Module(3, 64, kernel_size=7, stride=2, padding=3)
+        self.conv1    = conv_block(3, 64, kernel_size=7, stride=2, padding=3)
         self.maxpool1 = MaxPool2d(3, stride=2, ceil_mode=True)
-        self.conv2    = Conv_Module(64, 64, kernel_size=1)
-        self.conv3    = Conv_Module(64, 192, kernel_size=3, padding=1),
+        self.conv2    = conv_block(64, 64, kernel_size=1)
+        self.conv3    = conv_block(64, 192, kernel_size=3, padding=1),
         self.maxpool3 = MaxPool2d(3, stride=2, ceil_mode=True)
         
         self.inception3a = Inception_Module(192, 64, 96, 128, 16, 32, 32)
@@ -71,13 +65,13 @@ class GoogLeNet(Module):
         
         # Auxiliary Classifier 1    
         self.aux1 = Sequential(AdaptiveAvgPool2d((4, 4)),
-                               Conv_Module(512, 128, kernel_size=1), Flatten(),
+                               conv_block(512, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes), Softmax())
         
         # Auxiliary Classifier 2
         self.aux2 = Sequential(AdaptiveAvgPool2d((4, 4)),
-                               Conv_Module(528, 128, kernel_size=1), Flatten(),
+                               conv_block(528, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes), Softmax())
         
