@@ -1,6 +1,8 @@
 '''
 "Deep Residual Learning for Image Recognition" (He et al., 2015):
 https://arxiv.org/pdf/1512.03385.pdf
+"Identity Mappings in Deep Residual Networks" (He et al., 2016):
+https://arxiv.org/pdf/1603.05027v3.pdf
 '''
 from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, GroupNorm, ReLU, MaxPool2d, AdaptiveAvgPool2d, Flatten, Linear, Softmax
 from torch.nn.init import kaiming_normal_, constant_
@@ -23,15 +25,16 @@ class Bottleneck(Module):
         
         width = int(in_channels * (base_width / 64)) * groups
         # NVIDIA's ResNet V1.5: stride for downsampling is at the first 1x1 convolution instead of the 3x3 convolution.
-        self.conv1   = Conv_Block(in_channels, width, kernel_size=1)
-        self.conv2   = Conv_Block(width, width, kernel_size=3, stride, padding=1, dilation=1, groups=groups)
-        self.conv3   = Conv2d(width, conv_channels * self.expansion, kernel_size=1)
-        self.last_bn = BatchNorm2d(conv_channels * self.expansion)
+        self.conv = Sequential(
+            BatchNorm2d(width), ReLU(), Conv2d(in_channels, width, kernel_size=1),
+            BatchNorm2d(width), ReLU(), Conv2d(width, width, kernel_size=3, stride, padding=1, dilation=1, groups=groups),
+            BatchNorm2d(conv_channels * self.expansion), Conv2d(width, conv_channels * self.expansion, kernel_size=1)
+        )
 
     def forward(self, x):
         # Identity Shortcut
         identity = x
-        # Feature Extractor
+        # Residual Unit with a BN & ReLU pre-activation instead of post-activation.
         conv = self.last_bn(self.conv3(self.conv2(self.conv1(x))))
         # Identity Mapping
         conv += identity
@@ -87,7 +90,7 @@ class ResNet(Module):
         return Sequential(*layers)
 
     def forward(self, x):
-        # Feature Extractor
+        # Feature Space Transformer
         conv = self.maxpool(self.conv(x))
         l1 = self.layer1(conv)
         l2 = self.layer2(l1)
