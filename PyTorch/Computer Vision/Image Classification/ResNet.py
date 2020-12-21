@@ -20,14 +20,14 @@ class Bottleneck(Module):
     
     expansion = 4
     
-    def __init__(self, in_channels, conv_channels, stride=1, downsample=None, groups=1, base_width=64):
+    def __init__(self, in_channels, conv_channels, stride=1, downsample=None, base_width=64):
         super().__init__()
         
-        width = int(in_channels * (base_width / 64)) * groups
+        width = int(in_channels * (base_width / 64))
         # NVIDIA's ResNet V1.5: stride for downsampling is at the first 1x1 convolution instead of the 3x3 convolution.
         self.conv = Sequential(
             BatchNorm2d(width), ReLU(), Conv2d(in_channels, width, kernel_size=1),
-            BatchNorm2d(width), ReLU(), Conv2d(width, width, kernel_size=3, stride, padding=1, dilation=1, groups=groups),
+            BatchNorm2d(width), ReLU(), Conv2d(width, width, kernel_size=3, stride, padding=1),
             BatchNorm2d(conv_channels * self.expansion), Conv2d(width, conv_channels * self.expansion, kernel_size=1)
         )
 
@@ -45,7 +45,12 @@ class Bottleneck(Module):
 class ResNet(Module):
     def __init__(self, layers, num_classes=1000):
         super().__init__()
-        
+        """
+        Layers for:
+        - Resnet-50:  [3, 4, 6, 3]
+        - Resnet-101: [3, 4, 23, 3]
+        - Resnet-152: [3, 8, 36, 3]
+        """
         self.in_channels = 64
         
         self.conv    = Conv_Block(3, self.conv_channels, kernel_size=7, stride=2, padding=3)
