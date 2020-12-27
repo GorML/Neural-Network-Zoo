@@ -2,7 +2,7 @@
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
-#### :fire: PyTorch
+#### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
 
 #### :wind_face: Swift for Tensorflow
 
