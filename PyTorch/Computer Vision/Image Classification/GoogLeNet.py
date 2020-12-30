@@ -59,16 +59,16 @@ class GoogLeNet(Module):
 
         self.inception5a = Inception_Module(832, 256, 160, 320, 32, 128, 128)
         self.inception5b = Inception_Module(832, 384, 192, 384, 48, 128, 128)
-        self.avgpool     = AdaptiveAvgPool2d((1, 1))
+        self.avgpool     = AdaptiveAvgPool2d(1)
         
         # Auxiliary Classifier 1    
-        self.aux1 = Sequential(AdaptiveAvgPool2d((4, 4)),
+        self.aux1 = Sequential(AdaptiveAvgPool2d(4),
                                Conv_Block(512, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes), Softmax())
         
         # Auxiliary Classifier 2
-        self.aux2 = Sequential(AdaptiveAvgPool2d((4, 4)),
+        self.aux2 = Sequential(AdaptiveAvgPool2d(4),
                                Conv_Block(528, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes), Softmax())
