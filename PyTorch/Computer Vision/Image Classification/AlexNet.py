@@ -21,11 +21,12 @@ class AlexNet(Module):
             Conv2d(256, 384, kernel_size=3, padding=1), ReLU(),
             Conv2d(384, 384, kernel_size=3, padding=1), ReLU(),
             Conv2d(384, 256, kernel_size=3, padding=1), ReLU(),
-            MaxPool2d(kernel_size=3, stride=2), Flatten()
+            MaxPool2d(kernel_size=3, stride=2)
         )
         
         # Classifier
         self.classifier = Sequential(
+            Flatten(),
             Linear(256 * 6 * 6, 4096), ReLU(),
             Dropout(),
             Linear(4096, 4096), ReLU(),
