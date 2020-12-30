@@ -60,7 +60,7 @@ class ResNet(Module):
         self.layer2 = self._make_layer(Bottleneck, 128, layers[1], stride=2)
         self.layer3 = self._make_layer(Bottleneck, 256, layers[2], stride=2)
         self.layer4 = self._make_layer(Bottleneck, 512, layers[3], stride=2)
-        self.avgpool = AdaptiveAvgPool2d((1, 1))
+        self.avgpool = AdaptiveAvgPool2d(1)
         
         self.fc = Sequential(Flatten(), Linear(512 * Bottleneck.expansion, num_classes), Softmax())
 
