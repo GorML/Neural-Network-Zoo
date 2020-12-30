@@ -60,9 +60,9 @@ class ResNet(Module):
         self.layer2 = self._make_layer(Bottleneck, 128, layers[1], stride=2)
         self.layer3 = self._make_layer(Bottleneck, 256, layers[2], stride=2)
         self.layer4 = self._make_layer(Bottleneck, 512, layers[3], stride=2)
-        self.avgpool = Sequential(AdaptiveAvgPool2d((1, 1)), Flatten())
+        self.avgpool = AdaptiveAvgPool2d((1, 1))
         
-        self.fc = Sequential(Linear(512 * Bottleneck.expansion, num_classes), Softmax())
+        self.fc = Sequential(Flatten(), Linear(512 * Bottleneck.expansion, num_classes), Softmax())
 
         """
         Zero-initialize the last BatchNorm2d in each residual branch,
@@ -102,6 +102,7 @@ class ResNet(Module):
         l3 = self.layer3(l2)
         l4 = self.layer4(l3)
         ext = self.avgpool(l4)
+        
         # Classifier
         cls = self.fc(ext)
         return cls
