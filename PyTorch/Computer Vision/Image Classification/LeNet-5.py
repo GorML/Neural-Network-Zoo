@@ -14,11 +14,12 @@ class LeNet5(Module):
             Conv2d(in_channels, 6, kernel_size=5), Tanh(),
             MaxPool2d(2),
             Conv2d(6, 16, kernel_size=5), Tanh(),
-            MaxPool2d(2), Flatten()
+            MaxPool2d(2)
         )
         
         # Classifier
         self.classifier = Sequential(
+            Flatten(),
             Linear(256, 120), Tanh(),
             Linear(120, 84), Tanh(),
             Linear(84, num_classes), Tanh()
