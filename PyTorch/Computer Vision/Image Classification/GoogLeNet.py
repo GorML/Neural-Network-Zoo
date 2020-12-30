@@ -7,11 +7,9 @@ from torch.nn.init import kaiming_normal_, normal_, constant_
 
 
 def Conv_Block(in_channels, out_channels, **kwargs):
-    return Sequential(
-        Conv2d(in_channels, out_channels, **kwargs),
-        BatchNorm2d(out_channels),
-        ReLU()
-    )
+    return Sequential(Conv2d(in_channels, out_channels, **kwargs),
+                      BatchNorm2d(out_channels),
+                      ReLU())
 
 
 class Inception_Module(Module): 
@@ -61,7 +59,7 @@ class GoogLeNet(Module):
 
         self.inception5a = Inception_Module(832, 256, 160, 320, 32, 128, 128)
         self.inception5b = Inception_Module(832, 384, 192, 384, 48, 128, 128)
-        self.avgpool     = Sequential(AdaptiveAvgPool2d((1, 1)), Flatten())
+        self.avgpool     = AdaptiveAvgPool2d((1, 1))
         
         # Auxiliary Classifier 1    
         self.aux1 = Sequential(AdaptiveAvgPool2d((4, 4)),
@@ -76,7 +74,7 @@ class GoogLeNet(Module):
                                Linear(1024, num_classes), Softmax())
         
         # Classifier
-        self.fc = Sequential(Dropout(0.4), Linear(1024, num_classes), Softmax())
+        self.fc = Sequential(Flatten(), Dropout(0.4), Linear(1024, num_classes), Softmax())
 
         # Weight Initialization
         for module in self.modules():
@@ -116,4 +114,3 @@ class GoogLeNet(Module):
         
         cls = self.fc(ext)
         return cls, aux2, aux1 # aux losses are weighted by 0.3
-        
