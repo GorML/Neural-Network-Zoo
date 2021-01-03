@@ -8,14 +8,6 @@ from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, GroupNorm, ReLU, M
 from torch.nn.init import kaiming_normal_, constant_
 
 
-def Conv_Block(in_channels, out_channels, **kwargs):
-    return Sequential(
-        Conv2d(in_channels, out_channels, **kwargs),
-        BatchNorm2d(out_channels),
-        ReLU()
-    )
-
-
 class Bottleneck(Module):
     
     expansion = 4
@@ -53,8 +45,8 @@ class ResNet(Module):
         """
         self.in_channels = 64
         
-        self.conv    = Conv_Block(3, self.conv_channels, kernel_size=7, stride=2, padding=3)
-        self.maxpool = MaxPool2d(kernel_size=3, stride=2, padding=1)
+        self.convblock = Sequential(Conv2d(3, self.conv_channels, kernel_size=7, stride=2, padding=3), BatchNorm2d(self.conv_channels), ReLU())
+        self.maxpool   = MaxPool2d(kernel_size=3, stride=2, padding=1)
         
         self.layer1 = self._make_layer(Bottleneck, 64, layers[0])
         self.layer2 = self._make_layer(Bottleneck, 128, layers[1], stride=2)
