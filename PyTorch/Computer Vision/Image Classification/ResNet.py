@@ -55,7 +55,6 @@ class ResNet(Module):
         self.avgpool = AdaptiveAvgPool2d(1)
         
         self.fc = Sequential(Flatten(), Linear(512 * Bottleneck.expansion, num_classes), Softmax())
-
         """
         Zero-initialize the last BatchNorm2d in each residual branch,
         so that the residual branch starts with zeros, and each residual block behaves like an identity.
