@@ -2,7 +2,7 @@
 "U-Net: Convolutional Networks for Biomedical Image Segmentation" (Ronneberger et al., 2015):
 https://arxiv.org/pdf/1505.04597.pdf
 """
-from torch.nn import Module, Sequential, ReflectionPad2d, Conv2d, ConvTranspose2d, ReLU, MaxPool2d, Softmax
+from torch.nn import Module, Sequential, ReflectionPad2d, Conv2d, ConvTranspose2d, ReLU, MaxPool2d
 from torch.nn.init import kaiming_normal_, constant_
 
 
@@ -47,7 +47,7 @@ class UNet(Module):
         self.upconv4 = ConvTranspose2d(128, 64, kernel_size=2, stride=2)
         self.dec4    = Sequential(ReflectionPad2d(1), Conv2d(128, 64, kernel_size=3), ReLU(),
                                   ReflectionPad2d(1), Conv2d(64, 64, kernel_size=3), ReLU(),
-                                  Conv2d(64, out_channels, kernel_size=1), Softmax())
+                                  Conv2d(64, out_channels, kernel_size=1))
         
         # Weight Initialization
         for module in self.modules():

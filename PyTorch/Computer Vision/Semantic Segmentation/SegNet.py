@@ -2,7 +2,7 @@
 "SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation" (Badrinarayanan et al., 2016):
 https://arxiv.org/pdf/1511.00561.pdf
 """
-from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, MaxUnpool2d
 from torch.nn.init import kaiming_normal_, constant_
 
 
@@ -64,7 +64,7 @@ class SegNet(Module):
         
         self.unpool5 = MaxUnpool2d(kernel_size=2, stride=2)
         self.dec5    = Sequential(Conv_Block(64, 64, kernel_size=3, padding=1),
-                                  Conv2d(64, out_channels, kernel_size=3, padding=1), Softmax())
+                                  Conv2d(64, out_channels, kernel_size=3, padding=1))
         
         # Weight Initialization
         for module in self.modules():
