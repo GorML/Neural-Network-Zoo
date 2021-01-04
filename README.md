@@ -4,7 +4,7 @@
 
 #### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
 
-#### :wind_face: Swift for Tensorflow
+#### :wave: Swift for Tensorflow
 
 ## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
