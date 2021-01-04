@@ -2,7 +2,7 @@
 "Very Deep Convolutional Networks for Large-Scale Image Recognition" (Simonyan & Zisserman, 2015):
 https://arxiv.org/pdf/1409.1556.pdf
 '''
-from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear, Softmax
+from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear
 from torch.nn.init import xavier_normal_, normal_, constant_
 
 
@@ -43,7 +43,7 @@ class VGG16(Module):
             Dropout(),
             Linear(4096, 4096), ReLU(),
             Dropout(),
-            Linear(4096, num_classes), Softmax()
+            Linear(4096, num_classes)
         )
         
         # Weight Initialization
