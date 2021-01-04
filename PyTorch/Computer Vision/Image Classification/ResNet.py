@@ -4,7 +4,7 @@ https://arxiv.org/pdf/1512.03385.pdf
 "Identity Mappings in Deep Residual Networks" (He et al., 2016):
 https://arxiv.org/pdf/1603.05027v3.pdf
 '''
-from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, GroupNorm, ReLU, MaxPool2d, AdaptiveAvgPool2d, Flatten, Linear, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, GroupNorm, ReLU, MaxPool2d, AdaptiveAvgPool2d, Flatten, Linear
 from torch.nn.init import kaiming_normal_, constant_
 
 
@@ -54,7 +54,7 @@ class ResNet(Module):
         self.layer4 = self._make_layer(Bottleneck, 512, layers[3], stride=2)
         self.avgpool = AdaptiveAvgPool2d(1)
         
-        self.fc = Sequential(Flatten(), Linear(512 * Bottleneck.expansion, num_classes), Softmax())
+        self.fc = Sequential(Flatten(), Linear(512 * Bottleneck.expansion, num_classes))
         """
         Zero-initialize the last BatchNorm2d in each residual branch,
         so that the residual branch starts with zeros, and each residual block behaves like an identity.
