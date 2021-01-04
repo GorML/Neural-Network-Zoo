@@ -2,7 +2,7 @@
 "ImageNet Classification with Deep Convolutional Neural Networks" (Krizhevsky et al., 2012):
 http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf
 '''
-from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear, Softmax
+from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linear
 from torch.nn.init import normal_, constant_
 
 
@@ -31,7 +31,7 @@ class AlexNet(Module):
             Dropout(),
             Linear(4096, 4096), ReLU(),
             Dropout(),
-            Linear(4096, num_classes), Softmax()
+            Linear(4096, num_classes)
         )
         
         # Weight Initialization
