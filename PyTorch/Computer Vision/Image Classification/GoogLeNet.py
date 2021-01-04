@@ -2,7 +2,7 @@
 "Going deeper with convolutions" (Szegedy et al., 2014):
 https://arxiv.org/pdf/1409.4842.pdf
 '''
-from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, AdaptiveAvgPool2d, Dropout, Flatten, Linear, Softmax
+from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, AdaptiveAvgPool2d, Dropout, Flatten, Linear
 from torch.nn.init import kaiming_normal_, normal_, constant_
 
 
@@ -65,16 +65,16 @@ class GoogLeNet(Module):
         self.aux1 = Sequential(AdaptiveAvgPool2d(4),
                                Conv_Block(512, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
-                               Linear(1024, num_classes), Softmax())
+                               Linear(1024, num_classes))
         
         # Auxiliary Classifier 2
         self.aux2 = Sequential(AdaptiveAvgPool2d(4),
                                Conv_Block(528, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
-                               Linear(1024, num_classes), Softmax())
+                               Linear(1024, num_classes))
         
         # Classifier
-        self.fc = Sequential(Flatten(), Dropout(0.4), Linear(1024, num_classes), Softmax())
+        self.fc = Sequential(Flatten(), Dropout(0.4), Linear(1024, num_classes))
 
         # Weight Initialization
         for module in self.modules():
