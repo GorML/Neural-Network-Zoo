@@ -7,10 +7,11 @@ from torch.init import zero_
 
 
 class FCN8s(Module):
-    def __init__(self, in_channels=3, out_channels=33):
+    def __init__(self, in_channels=3, out_channels=33, pretrained_backbone):
         super().__init__()
-
+        
         # Feature Extractor
+        self.pretrained_backbone = pretrained_backbone
         self.conv1 = Sequential(Conv2d(in_channels, 64, kernel_size=3, padding=100), ReLU(),
                                 Conv2d(64, 64, kernel_size=3, padding=1), ReLU())
         self.pool1 = MaxPool2d(kernel_size=2, stride=2)
@@ -55,7 +56,7 @@ class FCN8s(Module):
         # pretrained weights from FCN32s
 
     def forward(self, x):
-        ext1 = self.pool1(self.conv1(x))
+        ext1 = self.pool1(self.conv1(pretrained_backbone(x)))
         ext2 = self.pool2(self.conv2(ext1))
         ext3 = self.pool3(self.conv3(ext2))
         ext4 = self.pool4(self.conv4(ext3))
