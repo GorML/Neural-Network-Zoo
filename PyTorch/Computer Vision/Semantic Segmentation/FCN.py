@@ -2,7 +2,7 @@
 "Fully Convolutional Networks for Semantic Segmentation" (Long et al., 2015):
 https://arxiv.org/pdf/1411.4038.pdf
 """
-from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, ReLU, MaxPool2d
+from torch.nn import Module, Sequential, Conv2d, ConvTranspose2d, ReLU, MaxPool2d, Dropout2d
 from torch.init import zero_
 
 
