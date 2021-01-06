@@ -6,29 +6,23 @@ from torch.nn import Module, Sequential, Conv2d, BatchNorm2d, ReLU, MaxPool2d, A
 from torch.nn.init import kaiming_normal_, normal_, constant_
 
 
-def Conv_Block(in_channels, out_channels, **kwargs):
+def ConvBlock(self, in_channels, out_channels, **kwargs):
     return Sequential(Conv2d(in_channels, out_channels, **kwargs),
                       BatchNorm2d(out_channels),
                       ReLU())
 
 
-class Inception_Module(Module): 
+class InceptionModule(Module): 
     def __init__(self, in_channels, ch1x1, ch3x3red, ch3x3, ch5x5red, ch5x5, pool_proj):
         super().__init__()
 
         self.block1 = Conv_Block(in_channels, ch1x1, kernel_size=1)
-        self.block2 = Sequential(
-            Conv_Block(in_channels, ch3x3red, kernel_size=1),
-            Conv_Block(ch3x3red, ch3x3, kernel_size=3, padding=1)
-        )
-        self.block3 = Sequential(
-            Conv_Block(in_channels, ch5x5red, kernel_size=1),
-            Conv_Block(ch5x5red, ch5x5, kernel_size=3, padding=1)
-        )
-        self.block4 = Sequential(
-            MaxPool2d(kernel_size=3, stride=1, padding=1, ceil_mode=True),
-            Conv_Block(in_channels, pool_proj, kernel_size=1)
-        )
+        self.block2 = Sequential(Conv_Block(in_channels, ch3x3red, kernel_size=1),
+                                 Conv_Block(ch3x3red, ch3x3, kernel_size=3, padding=1))
+        self.block3 = Sequential(Conv_Block(in_channels, ch5x5red, kernel_size=1),
+                                 Conv_Block(ch5x5red, ch5x5, kernel_size=3, padding=1))
+        self.block4 = Sequential(MaxPool2d(kernel_size=3, stride=1, padding=1, ceil_mode=True),
+                                 Conv_Block(in_channels, pool_proj, kernel_size=1))
 
     def forward(self, x):
         block1, block2, block3, block4 = self.block1(x), self.block2(x), self.block3(x), self.block4(x)
