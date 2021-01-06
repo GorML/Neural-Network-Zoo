@@ -16,13 +16,13 @@ class InceptionModule(Module):
     def __init__(self, in_channels, ch1x1, ch3x3red, ch3x3, ch5x5red, ch5x5, pool_proj):
         super().__init__()
 
-        self.block1 = Conv_Block(in_channels, ch1x1, kernel_size=1)
-        self.block2 = Sequential(Conv_Block(in_channels, ch3x3red, kernel_size=1),
-                                 Conv_Block(ch3x3red, ch3x3, kernel_size=3, padding=1))
-        self.block3 = Sequential(Conv_Block(in_channels, ch5x5red, kernel_size=1),
-                                 Conv_Block(ch5x5red, ch5x5, kernel_size=3, padding=1))
+        self.block1 = ConvBlock(in_channels, ch1x1, kernel_size=1)
+        self.block2 = Sequential(ConvBlock(in_channels, ch3x3red, kernel_size=1),
+                                 ConvBlock(ch3x3red, ch3x3, kernel_size=3, padding=1))
+        self.block3 = Sequential(ConvBlock(in_channels, ch5x5red, kernel_size=1),
+                                 ConvBlock(ch5x5red, ch5x5, kernel_size=3, padding=1))
         self.block4 = Sequential(MaxPool2d(kernel_size=3, stride=1, padding=1, ceil_mode=True),
-                                 Conv_Block(in_channels, pool_proj, kernel_size=1))
+                                 ConvBlock(in_channels, pool_proj, kernel_size=1))
 
     def forward(self, x):
         block1, block2, block3, block4 = self.block1(x), self.block2(x), self.block3(x), self.block4(x)
@@ -34,36 +34,36 @@ class GoogLeNet(Module):
         super().__init__()
         
         # Feature Extractor
-        self.conv1    = Conv_Block(3, 64, kernel_size=7, stride=2, padding=3)
+        self.conv1    = ConvBlock(3, 64, kernel_size=7, stride=2, padding=3)
         self.maxpool1 = MaxPool2d(3, stride=2, ceil_mode=True)
-        self.conv2    = Conv_Block(64, 64, kernel_size=1)
-        self.conv3    = Conv_Block(64, 192, kernel_size=3, padding=1),
+        self.conv2    = ConvBlock(64, 64, kernel_size=1)
+        self.conv3    = ConvBlock(64, 192, kernel_size=3, padding=1),
         self.maxpool3 = MaxPool2d(3, stride=2, ceil_mode=True)
         
-        self.inception3a = Inception_Module(192, 64, 96, 128, 16, 32, 32)
-        self.inception3b = Inception_Module(256, 128, 128, 192, 32, 96, 64)
+        self.inception3a = InceptionModule(192, 64, 96, 128, 16, 32, 32)
+        self.inception3b = InceptionModule(256, 128, 128, 192, 32, 96, 64)
         self.maxpool3    = MaxPool2d(3, stride=2, ceil_mode=True)
 
-        self.inception4a = Inception_Module(480, 192, 96, 208, 16, 48, 64)
-        self.inception4b = Inception_Module(512, 160, 112, 224, 24, 64, 64)
-        self.inception4c = Inception_Module(512, 128, 128, 256, 24, 64, 64)
-        self.inception4d = Inception_Module(512, 112, 144, 288, 32, 64, 64)
-        self.inception4e = Inception_Module(528, 256, 160, 320, 32, 128, 128)
+        self.inception4a = InceptionModule(480, 192, 96, 208, 16, 48, 64)
+        self.inception4b = InceptionModule(512, 160, 112, 224, 24, 64, 64)
+        self.inception4c = InceptionModule(512, 128, 128, 256, 24, 64, 64)
+        self.inception4d = InceptionModule(512, 112, 144, 288, 32, 64, 64)
+        self.inception4e = InceptionModule(528, 256, 160, 320, 32, 128, 128)
         self.maxpool4    = MaxPool2d(2, stride=2, ceil_mode=True)
 
-        self.inception5a = Inception_Module(832, 256, 160, 320, 32, 128, 128)
-        self.inception5b = Inception_Module(832, 384, 192, 384, 48, 128, 128)
+        self.inception5a = InceptionModule(832, 256, 160, 320, 32, 128, 128)
+        self.inception5b = InceptionModule(832, 384, 192, 384, 48, 128, 128)
         self.avgpool     = AdaptiveAvgPool2d(1)
         
         # Auxiliary Classifier 1    
         self.aux1 = Sequential(AdaptiveAvgPool2d(4),
-                               Conv_Block(512, 128, kernel_size=1), Flatten(),
+                               ConvBlock(512, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes))
         
         # Auxiliary Classifier 2
         self.aux2 = Sequential(AdaptiveAvgPool2d(4),
-                               Conv_Block(528, 128, kernel_size=1), Flatten(),
+                               ConvBlock(528, 128, kernel_size=1), Flatten(),
                                Linear(2048, 1024), ReLU(), Dropout(0.7),
                                Linear(1024, num_classes))
         
