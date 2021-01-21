@@ -1,4 +1,6 @@
-# Neural Network Model Zoo
+# :brain::spider_web: Neural Network Model Zoo
+[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](http://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
