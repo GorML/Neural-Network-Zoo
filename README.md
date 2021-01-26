@@ -3,6 +3,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
@@ -49,8 +52,13 @@
 ## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
 
 <!-- MARKDOWN LINKS -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
 [contributors-url]: https://github.com/geotrush/Neural-Network-Zoo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
+[forks-url]: https://github.com/geotrush/Neural-Network-Zoo/network/members
+[stars-shield]: https://img.shields.io/github/stars/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
+[stars-url]: https://github.com/geotrush/Neural-Network-Zoo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
+[issues-url]: https://github.com/geotrush/Neural-Network-Zoo/issues
 [license-shield]: https://img.shields.io/github/license/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
 [license-url]: https://github.com/geotrush/Neural-Network-Zoo/blob/master/LICENSE.md
