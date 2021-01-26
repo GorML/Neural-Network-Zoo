@@ -3,9 +3,9 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
 [![MIT License][license-shield]][license-url]
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
