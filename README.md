@@ -50,3 +50,10 @@
 5. Focus on the original paper's formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 
 ## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
+
+<!-- MARKDOWN LINKS -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
+[contributors-url]: https://github.com/geotrush/Neural-Network-Zoo/graphs/contributors
+[license-shield]: https://img.shields.io/github/license/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
+[license-url]: https://github.com/geotrush/Neural-Network-Zoo/blob/master/LICENSE.md
