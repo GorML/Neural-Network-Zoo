@@ -16,9 +16,10 @@
 
 ## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
-#### :eyes: Computer Vision
+#### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision)
 
 - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification)
+
   - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/LeNet-5.py) :fire:
   - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py) :fire:
   - [VGG-16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-16.py) :fire:
@@ -26,6 +27,7 @@
   - [ResNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/ResNet.py) :fire:
 
 - [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer%20Vision/Semantic%20Segmentation)
+
   - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/FCN8s.py) :fire:
   - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/U-Net.py) :fire:
   - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py) :fire:
