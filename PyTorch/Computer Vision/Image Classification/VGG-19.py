@@ -6,7 +6,7 @@ from torch.nn import Module, Sequential, Conv2d, ReLU, MaxPool2d, Flatten, Linea
 from torch.nn.init import xavier_normal_, normal_, constant_
 
 
-class VGG16(Module):
+class VGG19(Module):
     def __init__(self, in_channels=3, num_classes=1000):
         super().__init__()
         
@@ -23,13 +23,16 @@ class VGG16(Module):
             Conv2d(128, 256, kernel_size=3, padding=1), ReLU(),
             Conv2d(256, 256, kernel_size=3, padding=1), ReLU(),
             Conv2d(256, 256, kernel_size=3, padding=1), ReLU(),
+            Conv2d(256, 256, kernel_size=3, padding=1), ReLU(),
             MaxPool2d(kernel_size=2, stride=2),
             
             Conv2d(256, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
+            Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             MaxPool2d(kernel_size=2, stride=2),
             
+            Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
             Conv2d(512, 512, kernel_size=3, padding=1), ReLU(),
