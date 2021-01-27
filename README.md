@@ -39,6 +39,7 @@
 #### :art: Image/Video/Audio Synthesis
 
 - [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer)
+
   - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Neural%20Style%20Transfer.ipynb) :fire:
   - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Localized%20Style%20Transfer.ipynb) :fire:
   - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
