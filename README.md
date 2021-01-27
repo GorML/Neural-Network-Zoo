@@ -22,7 +22,7 @@
 
   - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/LeNet-5.py) :fire:
   - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py) :fire:
-  - [VGG-16](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-16.py) :fire:
+  - [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-19.py) :fire:
   - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py) :fire:
   - [ResNet-152](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/ResNet-152.py) :fire:
 
