@@ -26,9 +26,9 @@
   - [ResNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/ResNet.py) :fire:
 
 - [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer%20Vision/Semantic%20Segmentation)
+  - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/FCN8s.py) :fire:
   - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/U-Net.py) :fire:
   - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py) :fire:
-  - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/FCN8s.py)
 
 #### :speech_balloon: Speech Recognition
 
