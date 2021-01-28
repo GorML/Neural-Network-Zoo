@@ -38,7 +38,7 @@
 
 #### :joystick: Reinforcement Learning
 
-#### :art: Image/Video/Audio Synthesis
+#### :art: Image | Video | Audio Synthesis
 
 - [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer)
 
@@ -46,7 +46,7 @@
   - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Localized%20Style%20Transfer.ipynb) :fire:
   - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
 
-#### :mag: Image/Video/Audio Enhancement
+#### :mag: Image | Video | Audio Enhancement
 
 #### :dna: Geometric Deep Learning
 
