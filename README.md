@@ -38,14 +38,14 @@
 
 #### :joystick: Reinforcement Learning
 
-#### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis)
+#### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
 
-- [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer)
+- [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer)
 
-  - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Neural%20Style%20Transfer.ipynb) :fire:
-  - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
-  - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
-  - [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
+  - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Neural%20Style%20Transfer.ipynb) :fire:
+  - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
+  - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
+  - [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
 
 #### :mag: Image + Video + Audio Enhancement
 
