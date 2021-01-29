@@ -16,7 +16,7 @@
 
 ## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
-#### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
+### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
 
 - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
@@ -32,13 +32,13 @@
   - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/U-Net.py) :fire:
   - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/SegNet.py) :fire:
 
-#### :speech_balloon: Speech Recognition
+### :speech_balloon: Speech Recognition
 
-#### :books: Natural Language Processing
+### :books: Natural Language Processing
 
-#### :joystick: Reinforcement Learning
+### :joystick: Reinforcement Learning
 
-#### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
+### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
 
 - [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer)
 
@@ -47,9 +47,9 @@
   - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
   - [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
 
-#### :mag: Image + Video + Audio Enhancement
+### :mag: Image + Video + Audio Enhancement
 
-#### :dna: Geometric Deep Learning
+### :dna: Geometric Deep Learning
 
 ## :triangular_ruler: Formatting guidelines are:
 
