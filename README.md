@@ -21,16 +21,16 @@
 - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
   - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/LeNet-5.py) :fire:
-  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py) :fire:
-  - [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-19.py) :fire:
-  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py) :fire:
-  - [ResNet-152](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/ResNet-152.py) :fire:
+  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/AlexNet.py) :fire:
+  - [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/VGG-19.py) :fire:
+  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/GoogLeNet.py) :fire:
+  - [ResNet-152](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/ResNet-152.py) :fire:
 
-- [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer%20Vision/Semantic%20Segmentation)
+- [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer-Vision/Semantic-Segmentation)
 
-  - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/FCN8s.py) :fire:
-  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/U-Net.py) :fire:
-  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Semantic%20Segmentation/SegNet.py) :fire:
+  - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/FCN8s.py) :fire:
+  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/U-Net.py) :fire:
+  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/SegNet.py) :fire:
 
 #### :speech_balloon: Speech Recognition
 
@@ -38,15 +38,16 @@
 
 #### :joystick: Reinforcement Learning
 
-#### :art: Image | Video | Audio Synthesis
+#### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis)
 
-- [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer)
+- [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer)
 
-  - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Neural%20Style%20Transfer.ipynb) :fire:
-  - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Localized%20Style%20Transfer.ipynb) :fire:
-  - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%20%7C%20Audio%20%7C%20Video%20Synthesis/Style%20Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
+  - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Neural%20Style%20Transfer.ipynb) :fire:
+  - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
+  - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
+  - [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image+Audio+Video-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
 
-#### :mag: Image | Video | Audio Enhancement
+#### :mag: Image + Video + Audio Enhancement
 
 #### :dna: Geometric Deep Learning
 
