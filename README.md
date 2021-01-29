@@ -14,7 +14,7 @@
 
 #### :ocean: Swift for Tensorflow
 
-## :dart: Goal is to assemble a zoo of neural network models in the fields of:
+## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
 #### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision)
 
