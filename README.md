@@ -10,9 +10,9 @@
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
-#### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
+### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
 
-#### :ocean: Swift for Tensorflow
+### :ocean: Swift for Tensorflow
 
 ## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
