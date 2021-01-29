@@ -16,11 +16,11 @@
 
 ## :dart: Goal is to assemble a bank of neural network models in the fields of:
 
-#### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision)
+#### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
 
-- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification)
+- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
-  - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/LeNet-5.py) :fire:
+  - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/LeNet-5.py) :fire:
   - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/AlexNet.py) :fire:
   - [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/VGG-19.py) :fire:
   - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer%20Vision/Image%20Classification/GoogLeNet.py) :fire:
