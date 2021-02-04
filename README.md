@@ -1,4 +1,5 @@
-# :brain::spider_web: Neural Network Model Zoo
+# :brain::spider_web: **Neural Network Zoo**
+
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
