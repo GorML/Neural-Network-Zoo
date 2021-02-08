@@ -21,17 +21,17 @@
 
 - #### [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
-  - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/LeNet-5.py) :fire:
-  - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/AlexNet.py) :fire:
-  - [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/VGG-19.py) :fire:
-  - [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/GoogLeNet.py) :fire:
-  - [ResNet-152](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/ResNet-152.py) :fire:
+  - #### [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/LeNet-5.py) :fire:
+  - #### [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/AlexNet.py) :fire:
+  - #### [VGG-19](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/VGG-19.py) :fire:
+  - #### [GoogLeNet](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/GoogLeNet.py) :fire:
+  - #### [ResNet-152](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/ResNet-152.py) :fire:
 
-- [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer-Vision/Semantic-Segmentation)
+- #### [Semantic Segmentation](https://github.com/geotrush/Neural-Network-Model-Zoo/tree/main/PyTorch/Computer-Vision/Semantic-Segmentation)
 
-  - [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/FCN8s.py) :fire:
-  - [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/U-Net.py) :fire:
-  - [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/SegNet.py) :fire:
+  - #### [FCN8s](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/FCN8s.py) :fire:
+  - #### [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/U-Net.py) :fire:
+  - #### [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/SegNet.py) :fire:
 
 ### :speech_balloon: Speech Recognition
 
@@ -41,12 +41,12 @@
 
 ### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
 
-- [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer)
+- #### [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer)
 
-  - [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Neural%20Style%20Transfer.ipynb) :fire:
-  - [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
-  - [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
-  - [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
+  - #### [Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Neural%20Style%20Transfer.ipynb) :fire:
+  - #### [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
+  - #### [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
+  - #### [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
 
 ### :mag: Image + Video + Audio Enhancement
 
@@ -54,13 +54,15 @@
 
 ## :triangular_ruler: Formatting guidelines are:
 
-1. References to the original [arXiv](https://arxiv.org/) papers.
-2. Easy first-glance understanding of modular architectures.
-3. Chronological layout of learning modules, going from shallow to deeper layers.
-4. Single class/structure per every network with clarifying inline comments for bigger blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
-5. Focus on the original paper's formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
+1. #### Single file/notebook per every network.
+2. #### Easy first-glance understanding of modular architectures.
+3. #### References to the original [arXiv](https://arxiv.org/) papers and official [GitHub](https://github.com/) repositories.
+4. #### Chronological layout of learning modules, going from shallow to deeper layers.
+5. #### Single class/structure per every network with clarifying inline comments for bigger network blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
+6. #### Focus on the original paper's formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 
 ## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
+
 
 <!-- MARKDOWN LINKS -->
 [contributors-shield]: https://img.shields.io/github/contributors/geotrush/Neural-Network-Zoo.svg?style=for-the-badge
