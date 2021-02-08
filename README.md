@@ -19,7 +19,7 @@
 
 ### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
 
-- [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
+#### - [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
   - [LeNet-5](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/LeNet-5.py) :fire:
   - [AlexNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification/AlexNet.py) :fire:
