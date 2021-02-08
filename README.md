@@ -47,6 +47,7 @@
   - #### [Localized Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Localized%20Style%20Transfer.ipynb) :fire:
   - #### [Fast Neural Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer.ipynb) :fire:
   - #### [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
+  - #### [Fast Neural Style Transfer with AdaIN](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20AdaIN.ipynb) :fire:
 
 ### :mag: Image + Video + Audio Enhancement
 
@@ -54,11 +55,11 @@
 
 ## :triangular_ruler: Formatting guidelines are:
 
-1. #### Single file/notebook per every network.
-2. #### Easy first-glance understanding of modular architectures.
-3. #### References to the original [arXiv](https://arxiv.org/) papers and official [GitHub](https://github.com/) repositories.
-4. #### Chronological layout of learning modules, going from shallow to deeper layers.
-5. #### Single class/structure per every network with clarifying inline comments for bigger network blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
+1. #### Easy first-glance understanding of modular architectures.
+2. #### References to the original [arXiv](https://arxiv.org/) papers and official [GitHub](https://github.com/) repositories.
+3. #### Chronological layout of learning modules, going from shallow to deeper layers.
+4. #### Single class/structure per every network with clarifying inline comments for bigger network blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
+5. #### Single file/notebook per every network. Jupyter Notebooks with full training/testing pipelines are preferable when optimization is non-trivial and results are especially useful or simply appealing.
 6. #### Focus on the original paper's formulation, guiding the choice of implementation level (whether on the low level of matrix multiplications or on the higher levels of framework modules).
 
 ## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
