@@ -9,6 +9,14 @@
 [![Forks][forks-shield]][forks-url]
 [![MIT License][license-shield]][license-url]
 
+<p align="center">
+    <img src="https://media.giphy.com/media/3mlcG0HYlpXntrzbUZ/giphy.gif" width=600 height=600>
+</p>
+
+<h4 align="center"> 
+    <p><a href="https://www.behance.net/sdrnsdrn/">Animation by SDRN SDRN</a></p>
+</h4>
+
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
 
 ### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
