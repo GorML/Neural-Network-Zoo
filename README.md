@@ -14,7 +14,7 @@
 </p>
 
 <h4 align="center"> 
-    <p><a href="https://www.behance.net/sdrnsdrn/">Animation by SDRN SDRN</a></p>
+    <p><a href="https://www.instagram.com/sdrnsdrn/">Animation by SDRN SDRN</a></p>
 </h4>
 
 ## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
