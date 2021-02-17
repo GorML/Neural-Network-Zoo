@@ -10,7 +10,7 @@
 [![MIT License][license-shield]][license-url]
 
 <p align="center">
-    <img src="https://i.giphy.com/media/3mlcG0HYlpXntrzbUZ/giphy.webp">
+    <img src="https://i.giphy.com/media/3mlcG0HYlpXntrzbUZ/giphy.webp" width=600 height=600>
 </p>
 
 <h4 align="center"> 
