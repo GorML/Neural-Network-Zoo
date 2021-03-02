@@ -3,6 +3,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
+[![Contributions](https://img.shields.io/badge/Contributions-welcome.svg?style=for-the-badge)](https://github.com/geotrush/Neural-Network-Zoo/pulls)
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
