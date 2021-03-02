@@ -3,7 +3,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-[![Contributions](https://img.shields.io/badge/Contributions-welcome.svg?style=for-the-badge)](https://github.com/geotrush/Neural-Network-Zoo/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/geotrush/Neural-Network-Zoo/pulls)
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -18,15 +18,15 @@
     <p><a href="https://www.instagram.com/sdrnsdrn/">Animation by SDRN SDRN</a></p>
 </h4>
 
-## :question: Purpose is to create easy-to-read original-paper implementations of major neural network achitectures in:
+## :question: Purpose is to create easy-to-read original-paper implementations of major neural network architectures in:
 
 ### :fire: [PyTorch](https://github.com/geotrush/Neural-Network-Zoo/tree/main/PyTorch)
 
 ### :ocean: Swift for Tensorflow
 
-## :dart: Goal is to assemble a bank of neural network models in the fields of:
+## :dart: Main goal is to assemble a diverse zoo of neural network models in the fields of:
 
-### :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
+## :eyes: [Computer Vision](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
 
 - ### [Image Classification](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
@@ -42,13 +42,13 @@
   - #### [U-Net](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/U-Net.py) :fire:
   - #### [SegNet](https://github.com/geotrush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Semantic-Segmentation/SegNet.py) :fire:
 
-### :speech_balloon: Speech Recognition
+## :speech_balloon: Speech Recognition
 
-### :books: Natural Language Processing
+## :books: Natural Language Processing
 
-### :joystick: Reinforcement Learning
+## :joystick: Reinforcement Learning
 
-### :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
+## :art: [Image + Video + Audio Synthesis](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis)
 
 - ### [Style Transfer](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer)
 
@@ -58,20 +58,21 @@
   - #### [Fast Neural Style Transfer with AdaIN](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20AdaIN.ipynb) [![Colab](https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/github/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20AdaIN.ipynb) :fire:
   - #### [Fast Neural Style Transfer with MSG-Net](https://github.com/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) [![Colab](https://camo.githubusercontent.com/52feade06f2fecbf006889a904d221e6a730c194/68747470733a2f2f636f6c61622e72657365617263682e676f6f676c652e636f6d2f6173736574732f636f6c61622d62616467652e737667)](https://colab.research.google.com/github/geotrush/Neural-Network-Zoo/blob/main/PyTorch/Image%2BVideo%2BAudio-Synthesis/Style-Transfer/Fast%20Neural%20Style%20Transfer%20with%20MSG-Net.ipynb) :fire:
 
-### :mag: Image + Video + Audio Enhancement
+## :mag: Image + Video + Audio Enhancement
 
-### :dna: Geometric Deep Learning
+## :dna: Geometric Deep Learning
+
 
 ## :triangular_ruler: Formatting guidelines are:
 
 ### 1. Easy first-glance understanding of modular architectures.
-### 2. References to the original arXiv papers and official GitHub repositories.
+### 2. References to the original papers and official repositories.
 ### 3. Chronological layout of learning modules, going from shallow to deeper layers.
-### 4. Single class/structure per every network with clarifying inline comments for bigger network blocks/modules. Custom modules are permissible, if necessary. Smaller classes go before larger ones.
-### 5. Single file/notebook per every network. Jupyter Notebooks with full training/testing pipelines are preferable when optimization is non-trivial and results are especially useful or simply appealing.
+### 4. Single core class/structure per every network with clarifying inline comments for smaller blocks/modules. Smaller classes go before larger ones. Custom modules are permissible, if necessary.
+### 5. Single file/notebook per every network. Jupyter Notebooks with full training/testing pipelines are preferable when optimization is non-trivial and results are especially useful or just appealing.
 ### 6. Focus on the original paper's formulation, guiding the choice of implementation level, that is, whether on the low level of matrix multiplications or on the higher levels of framework modules.
 
-## :hugs: *Any contributions are greatly appreciated as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also very welcome!*
+## :hugs: *Contributions are very welcome as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also greatly appreciated!*
 
 
 <!-- MARKDOWN LINKS -->
