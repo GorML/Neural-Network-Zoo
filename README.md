@@ -24,7 +24,7 @@
 
 ## :dart: Main goal is to assemble a diverse zoo of neural network models in the fields of:
 
-## :eyes: [Computer Vision](https://github.com/tensorush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
+## :eye: [Computer Vision](https://github.com/tensorush/Neural-Network-Zoo/blob/main/PyTorch/Computer-Vision)
 
 - ### [Image Classification](https://github.com/tensorush/Neural-Network-Model-Zoo/blob/main/PyTorch/Computer-Vision/Image-Classification)
 
@@ -74,7 +74,7 @@
 
 ### 6. Focus on the original paper's formulation, guiding the choice of implementation level, that is, whether on the low level of matrix multiplications or on the higher levels of framework modules.
 
-## :hugs: _Contributions are very welcome as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also greatly appreciated!_
+> ### :hugs: _Contributions are very welcome as long as they comply with the established formatting. Suggestions on modifying the formatting guidelines are also greatly appreciated!_
 
 <!-- MARKDOWN LINKS -->
 
