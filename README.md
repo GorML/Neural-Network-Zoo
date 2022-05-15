@@ -60,6 +60,19 @@
 
 ## :dna: Geometric Deep Learning
 
+## :man_teacher: Learning Resources
+
+### :man_teacher: [Deep Learning Course from the UvA](https://uvadlc.github.io/)
+
+### :man_teacher: [Introduction to Deep Learning Course from the MIT](http://introtodeeplearning.com/)
+
+
+### :film_projector: [Deep Learning Coursera Specialization from the NTU CSIE](https://www.csie.ntu.edu.tw/~cjlin/courses/optdl2021/)
+
+### :man_teacher: [Deep Learning Coursera Specialization from DeepLearning.AI](https://www.coursera.org/specializations/deep-learning)
+
+### :tv: [Lectures on Reinforcement Learning from DeepMind and the UCL](https://www.youtube.com/playlist?list=PLqYmG7hTraZDVH599EItlEWsUOsJbAodm)
+
 ## :triangular_ruler: Contribution Guidelines
 
 ### 1. Easy first-glance understanding of modular architectures.
